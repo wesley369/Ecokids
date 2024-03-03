@@ -32,30 +32,24 @@
     margin-right: -20px;
 }
 
-#banner{
-    background-size: cover;
-    background-position: center;
+.fundo-verde {
     width: 100%;
-}
-
-.img-fluid {
-    object-fit: cover;
-}
-
-span {
-    color: rgba(255, 5, 45, 1);
-}
-
-h1{
-    color: rgba(0, 152, 121, 1);
+    height: 300px;
+    background-color: rgba(9, 208, 168, 1);
     text-align: center;
-    margin-top: 60px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.texto{
+    margin: 5% 5%;
 }
 
 .cards{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     gap: 30px;
     margin-left: 5%;
     margin-right: 5%;
@@ -65,20 +59,23 @@ h1{
     height: 300px;
     background-color: gray;
     border-radius: 44px;
+    width: 100%;
 }
 
-.fundo-verde{
-    background-image: url(/img/fundo-verde.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 900px;
-    margin-top: 60px;
-    padding-bottom: 60px;
-    padding: 20px 0;
+#card-tutu{
+    background-color: rgba(255, 207, 202, 1);
 }
-.fundo-verde > h1{
-    color: white;
+
+
+.cards-meninos{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    justify-content: center;
+    grid-template-rows: auto;
+    gap: 30px;
+    margin-left: 20.6%;
+    margin-right: 20.6%;
+    margin-top: 30px;
 }
 
 .rodape{
@@ -92,6 +89,7 @@ h1{
     line-height: 30px;
     background-color: rgba(99, 189, 211, 1);
     column-gap: 40px;
+    margin-top: 30px;
 }
 .rodape > div > img{
     border-radius: 50%;
@@ -101,31 +99,3 @@ h1{
     flex-direction: row;
     column-gap: 40px;
 }
-
-/* Estilos para telas menores que 900px */
-@media (max-width: 900px) {
-    .menu-superior{
-        margin: 0 5%;
-    }
-    .barra{
-        width: 40%;
-        height: 20px;
-    }
-    .img-fluid{
-        width: 40%;
-        height: 100%;
-    }
-
-    h1{
-        font-size: large;
-    }
-    .cards{
-        grid-template-columns: auto auto;  
-    }
-    .cards-content{
-        height: 200px;
-        width: 70%;
-        justify-self: center;
-    }
-  }
-  
