@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoKids</title>
+    {% load static %}
+    <!-- Pessoal eu tô configurando o front para que rode tudo no servidor, mas quando vai desenvolver usando live server dá uma quebrada nas coisas
+    então quando forem desenvolver o front para arquivos estáticos como imagem, link css, js.....  Façam da forma por exemplo com estou fazendo logo abaixo
+    com a imagem da logo. Para desenvolver, usem o caminho que já usamos normalmente, mas também coloquem o caminho que o servidor vai entender usando 
+    essas tags{% static 'img/EcoKids-Logo.png' %}. Podem deixar comentado o ccomando para o servidor e deixar o link normal dos arquivos que eu destroco isso
+    na hora de colcoar as modificações de vcs no servidor-->
+    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" type="image/x-icon"> -->
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
+    
+    <link rel="stylesheet" href="/EcoKids/EcoKids_Integracao/static/css/HomePage.css">
+</head>
+<body>
+      <div class="menu-superior">
+        <div>
+          <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo"> -->
+          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
+        </div>
+        <div class="barra">
+          <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(255, 101, 79, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"></div>
+        </div>
+        <div>
+            <!-- <img src="/EcoKids/EcoKids_Integracao/static/img/pesquisar-logo.png" alt="pesquisar-logo" class="img-fluid"> -->
+            <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
+        </div>
+      </div>
+   <div>
+      <!-- <img id="banner" src="/EcoKids/EcoKids_Integracao/static/img/Banner.png" alt="banner" class="img-fluid"> -->
+      <img id="banner" src="{% static 'img/Banner.png' %}" alt="banner" class="img-fluid">
+   </div>
+   <div>
+      <h1>
+          <span>EQUILIBRIO ENTRE</span> BRINCAR <span>E</span> <br>APRENDER</br>
+      </h1>
+   </div>
+   <div class="cards">
+    <div class="cards-content">
+        
+    </div>
+    <div class="cards-content">
+        
+    </div>
+    <div class="cards-content">
+        
+    </div>
+    <div class="cards-content">
+      
+  </div>
+  <div class="cards-content">
+      
+  </div>
+  <div class="cards-content">
+      
+  </div>
+   </div>
+   <div class ="fundo-verde">
+    <h1>
+      EXPLORE NOSSO MUNDO!!
+    </h1>
+    <div class="cards">
+      <div class="cards-content">
+          
+      </div>
+      <div class="cards-content">
+          
+      </div>
+      <div class="cards-content">
+          
+      </div>
+      <div class="cards-content">
+        
+    </div>
+    <div class="cards-content">
+        
+    </div>
+    <div class="cards-content">
+        
+    </div>
+   </div>
+  </div>
+   <div class="rodape">
+     <div>
+       <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo">  -->
+       <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"> 
+     </div>
+     <div class="rodape-content">
+     <div>
+       <h5>SOBRE NÓS</h5>
+       <H6>QUEM SOMOS</H6>
+     </div>
+       <div>
+         <h5>SOBRE NÓS</h5>
+         <H6>QUEM SOMOS</H6>
+       </div>
+       <div>
+         <h5>SOBRE NÓS</h5>
+         <a href="/EcoKids/EcoKids_Integracao/templates/EcoKids_Integracao/QuemSomos.html">
+           <H6>QUEM SOMOS</H6>
+         </a>
+       </div>
+     </div>
+   </div>
+</body>
+</html>
+  </div>
+   <!-- <script src="js/jquery-3.3.1.slim.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.js"></script> -->
+</body>
+</html>

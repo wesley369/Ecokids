@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.menu-superior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-wrap: wrap;
+}
+
+.barra{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    height: 42px;
+    justify-self: center;
+}
+.barra-colorida{
+    width: 33%;
+    border-radius: 29px;
+    margin-left: -20px; 
+    margin-right: -20px;
+}
+
+#banner{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.img-fluid {
+    object-fit: cover;
+}
+
+span {
+    color: rgba(255, 5, 45, 1);
+}
+
+h1{
+    color: rgba(0, 152, 121, 1);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.cards-content{
+    height: 300px;
+    background-color: gray;
+    border-radius: 44px;
+}
+
+.fundo-verde{
+    background-image: url('../img/fundo-verde.png');  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 900px;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    padding: 20px 0;
+}
+.fundo-verde > h1{
+    color: white;
+}
+
+.rodape{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    background-color: rgba(99, 189, 211, 1);
+    column-gap: 40px;
+}
+.rodape > div > img{
+    border-radius: 50%;
+}
+.rodape-content{
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+}
+
+/* Estilos para telas menores que 900px */
+@media (max-width: 900px) {
+    .menu-superior{
+        margin: 0 5%;
+    }
+    .barra{
+        width: 40%;
+        height: 20px;
+    }
+    .img-fluid{
+        width: 40%;
+        height: 100%;
+    }
+
+    h1{
+        font-size: large;
+    }
+    .cards{
+        grid-template-columns: auto auto;  
+    }
+    .cards-content{
+        height: 200px;
+        width: 70%;
+        justify-self: center;
+    }
+  }
+  
