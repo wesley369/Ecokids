@@ -22,8 +22,8 @@
       <div class="menu-superior">
         <div>
           <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo"> -->
-          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
-        </div>
+          <a href="{% url 'EcoKids_Integracao:Login' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"></a>
+        </div> 
         <div class="barra">
           <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);"></div>
           <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"></div>
@@ -92,6 +92,35 @@
     </div>
    </div>
   </div>
+  <!-- <div class="image-container">
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
+
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
+</div> -->
+
+
    <div class="rodape">
      <div>
        <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo">  -->
@@ -108,7 +137,7 @@
        </div>
        <div>
          <h5>SOBRE NÓS</h5>
-         <a href="/EcoKids/EcoKids_Integracao/templates/EcoKids_Integracao/QuemSomos.html">
+         <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
            <H6>QUEM SOMOS</H6>
          </a>
        </div>

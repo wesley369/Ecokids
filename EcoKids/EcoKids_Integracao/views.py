@@ -5,3 +5,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
     return render(request, 'EcoKids_Integracao/HomePage.html')
+
+
+def QuemSomos(request):
+    return render(request, 'EcoKids_Integracao/QuemSomos.html')    
+
+def Login(request):
+    return render(request, 'EcoKids_Integracao/Login.html')    

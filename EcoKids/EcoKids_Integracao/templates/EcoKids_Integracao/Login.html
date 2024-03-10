@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <title>login e Cadastro</title>
+    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="Entrar-Inscreverse">
+                <form action="" class="Entrar-form">
+                    <div class="logo">
+                        <img src="{% static 'img/EcoKids-Logo.png' %}" alt="" width="90px" height="90px" id="logo">
+                      </div>
+                    <h2 class="title">EcoKids</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Email" id="email" onchange="onChangeEmail()">
+                    </div>
+                    <div class="error" id="email-required-error">Email é obrigatório!</div>
+                    <div class="error" id="email-invalid-error">Email inválido!</div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" onchange="onChangePassword()" autocomplete="on" placeholder="Senha">
+                    </div>
+                    <div class="error" id="password-required-error">Senha é obrigatória!</div>
+                    <div class="error">Senha incorreta!</div>
+
+                    <div>
+                        <button type="button" id="recover-password-button" class="clear" disabled="true">Esqueceu a senha?</button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn solid" id="login-button" onclick="login()" disabled="true">Entrar</button>
+                    </div>
+
+                    <p class="social-text">Ou entre com plataformas sociais</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+                <form action="" class="Inscrever-se-form">
+                    <div class="logo">
+                        <img src="{% static 'img/EcoKids-Logo.png' %}" alt="" width="90px" height="90px" id="logo">
+                      </div>
+                    <h2 class="title">Tropical Garden</h2>
+
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Nome" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Senha" autocomplete="on" required>
+                    </div>
+
+                    <input type="submit" value="Inscrever-se" class="btn solid">
+
+                    <p class="social-text">Ou inscreva-se através das plataformas sociais</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h2>Bem-Vindo ao</h2>
+                    <img class="logs" src="img/agendar.png" alt="">
+                    <h4>EcoKids</h4>
+                    <p>Faça login ou inscreva-se para realizar seu agendamento.</p>
+                    <button class="btn transparent" id="Inscrever-se-btn">Criar Conta</button>
+                </div>
+                <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img src="{% static 'img/mascote (2).png' %}" class="image" alt="mascote"></a>
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Já possui uma conta?</h3>
+                    <p>Faça login utilizando seu nome e senha.</p>
+                    <button class="btn transparent" id="Login-btn">Fazer login</button>
+                </div>
+
+                <a href="{% url 'EcoKids_Integracao:HomePage' %} "><img src="{% static 'img/mascote (2).png' %}" class="image" alt="outra"></a>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/validations.js'}"></script>
+</body>
+
+</html>

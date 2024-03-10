@@ -50,6 +50,7 @@ h1{
     color: rgba(0, 152, 121, 1);
     text-align: center;
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .cards{
@@ -59,6 +60,7 @@ h1{
     gap: 30px;
     margin-left: 5%;
     margin-right: 5%;
+    padding-bottom: 300px;
 }
 
 .cards-content{
@@ -72,26 +74,42 @@ h1{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 900px;
     margin-top: 60px;
-    padding-bottom: 60px;
-    padding: 20px 0;
+    padding-top: 20px;
+   
 }
+
 .fundo-verde > h1{
     color: white;
 }
+.image-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: -2660px;
+    /*bottom: -980px;*/  /* live server */
+    overflow: hidden;
+}
+.image-container img {
+    margin-left: -200px; 
+    margin-right: -200px;
+    height: auto;
+    object-fit: cover;
+}
+
 
 .rodape{
     display: flex;
     flex-direction: row;
     padding-left: 5%;
     padding-right: 5%;
-    height: 300px;
+    height: 600px;
     justify-content: center;
     align-items: center;
     line-height: 30px;
     background-color: rgba(99, 189, 211, 1);
     column-gap: 40px;
+    padding-top: 200px;
 }
 .rodape > div > img{
     border-radius: 50%;
@@ -101,6 +119,8 @@ h1{
     flex-direction: row;
     column-gap: 40px;
 }
+
+
 
 /* Estilos para telas menores que 900px */
 @media (max-width: 900px) {
