@@ -12,3 +12,6 @@ def QuemSomos(request):
 
 def Login(request):
     return render(request, 'EcoKids_Integracao/Login.html')    
+
+def Personagem(request):
+    return render(request, 'EcoKids_Integracao/Personagem.html')      

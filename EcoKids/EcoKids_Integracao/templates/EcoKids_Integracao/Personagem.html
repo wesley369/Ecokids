@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoKids</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" type="image/x-icon"> -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Personagem.css' %}">
+</head>
+<body>
+      <div class="menu-superior">
+        <div>
+          <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo"> -->
+          <a href="{% url 'EcoKids_Integracao:Login' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"></a>
+        </div> 
+        <div class="barra">
+          <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(255, 101, 79, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"></div>
+        </div>
+        <div>
+            <!-- <img src="/EcoKids/EcoKids_Integracao/static/img/pesquisar-logo.png" alt="pesquisar-logo" class="img-fluid"> -->
+            <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
+        </div>
+      </div>
+      <div class="carrousel">
+        <div>
+            <h1>
+                CRIE SEU PERSONAGEM
+            </h1>
+        </div>
+        <div class="center">
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-wesley.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-rafael.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
+                </div>
+                <div class="carrousel-itens">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
+                </div>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Personagem">
+        </div>
+        <DIV class="botao">
+            <button type="submit">VAMOS JOGAR</button>
+        </DIV>
+    </div>
+
+    <div class="rodape">
+        <div>
+          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
+        </div>
+        <div class="rodape-content">
+        <div>
+          <h5>SOBRE NÓS</h5>
+          <H6>QUEM SOMOS</H6>
+        </div>
+          <div>
+            <h5>SOBRE NÓS</h5>
+            <H6>QUEM SOMOS</H6>
+          </div>
+          <div>
+            <h5>SOBRE NÓS</h5>
+              <H6>QUEM SOMOS</H6>
+          </div>
+        </div>
+      </div>
+
+    <script>
+        $('.center').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 5,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        </script>
+      </script> 
+   </body>
+</html>
