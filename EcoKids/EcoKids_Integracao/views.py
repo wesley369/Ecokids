@@ -14,4 +14,7 @@ def Login(request):
     return render(request, 'EcoKids_Integracao/Login.html')    
 
 def Personagem(request):
-    return render(request, 'EcoKids_Integracao/Personagem.html')      
+    return render(request, 'EcoKids_Integracao/Personagem.html')  
+
+def Card(request):
+    return render(request, 'EcoKids_Integracao/Card.html')         
