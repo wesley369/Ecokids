@@ -49,10 +49,6 @@
 
 .barra-colorida a {
   text-decoration: none;
-  color: black;
-}
-
-.barra-colorida:hover a {
   color: white;
 }
 
