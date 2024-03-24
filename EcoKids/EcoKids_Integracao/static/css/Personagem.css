@@ -16,21 +16,40 @@
   margin-left: 5%;
   margin-right: 5%;
   flex-wrap: wrap;
+  animation: fadeInDown 1s ease-out;
 }
 
 .barra {
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 53%;
   height: 42px;
   justify-self: center;
 }
-
 .barra-colorida {
   width: 33%;
   border-radius: 29px;
   margin-left: -20px;
   margin-right: -20px;
+  text-align: center;
+  padding-top: 10px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.barra-colorida:hover {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: white;
+}
+
+.barra-colorida a {
+  text-decoration: none;
+  color: black;
+}
+
+.barra-colorida:hover a {
+  color: white;
 }
 
 h1 {
@@ -124,6 +143,7 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
 button {
   background-color: rgba(255, 236, 57, 1);
   text-align: center;
@@ -133,10 +153,12 @@ button {
   border: none;
   padding: 15px 50px;
   margin-top: 30px;
+  animation: pulse 2s infinite;
 }
 
 button:hover {
   cursor: pointer;
+  animation: none;
 }
 .rodape {
   display: flex;
@@ -158,4 +180,16 @@ button:hover {
   display: flex;
   flex-direction: row;
   column-gap: 40px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
 }

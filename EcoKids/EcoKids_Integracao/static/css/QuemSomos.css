@@ -16,12 +16,13 @@
   margin-left: 5%;
   margin-right: 5%;
   flex-wrap: wrap;
+  animation: fadeInDown 1s ease-out;
 }
 
 .barra {
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 53%;
   height: 42px;
   justify-self: center;
 }
@@ -30,7 +31,28 @@
   border-radius: 29px;
   margin-left: -20px;
   margin-right: -20px;
+  text-align: center;
+  padding-top: 10px;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
+
+.barra-colorida:hover {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: white;
+}
+
+.barra-colorida a {
+  text-decoration: none;
+  color: black;
+}
+
+.barra-colorida:hover a {
+  color: white;
+}
+
+
 
 .fundo-verde {
   width: 100%;
@@ -121,4 +143,15 @@
   display: flex;
   flex-direction: row;
   column-gap: 40px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

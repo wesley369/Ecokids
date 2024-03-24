@@ -40,6 +40,16 @@
   width: 50%;
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  color: white;
+}
+
+.barra-colorida a {
+  text-decoration: none;
+  color: black;
+}
+
+.barra-colorida:hover a {
+  color: white;
 }
 
 #banner {
@@ -70,7 +80,7 @@ h1 {
   gap: 30px;
   margin-left: 5%;
   margin-right: 5%;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
 }
 
 .cards-content {
@@ -195,4 +205,3 @@ h1 {
     transform: translateY(0);
   }
 }
-
