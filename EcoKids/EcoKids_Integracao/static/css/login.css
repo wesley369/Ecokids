@@ -26,7 +26,7 @@ body, input{
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #EF216B, #f01c69);
+    background: linear-gradient(-45deg, rgb(125, 192, 209),  rgba(99, 189, 211, 1));
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
