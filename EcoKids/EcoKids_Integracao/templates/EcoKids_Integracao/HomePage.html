@@ -29,9 +29,9 @@
           <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);">Mural</div>
           <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);">Ranking</div>
           <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);">Metas</div>
-          <div class="barra-colorida " style="background-color: rgba(255, 101, 79, 1);"> Sobre nós</div>
+          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"> Sobre nós</div>
           <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);">Login</div>
-          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"></div>
+          <div class="barra-colorida " style="background-color: rgba(255, 101, 79, 1);"></div>
         </div>
         <div>
             <!-- <img src="/EcoKids/EcoKids_Integracao/static/img/pesquisar-logo.png" alt="pesquisar-logo" class="img-fluid"> -->
@@ -48,17 +48,18 @@
       </h1>
    </div>
    <div class="cards">
-    <div class="cards-content">
-        
+    <div class="cards-content">  
     </div>
-    <div class="cards-content">
-        
+
+    <div class="cards-content">   
     </div>
-    <div class="cards-content">
-        
+
+    <div class="cards-content"> 
     </div>
 
    </div>
+   <img src="{% static 'img/Flores.png' %}" alt="Flores" class="flores">
+
    <div class ="fundo-verde">
     <h1>
       EXPLORE NOSSO MUNDO!!
@@ -102,7 +103,7 @@
     <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
 </div> -->
 
-
+  <img src="{% static 'img/nuvem_green_blue.png' %}" alt="nuvem" class="nuvem-green">
    <div class="rodape">
      <div>
        <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo">  -->
@@ -111,7 +112,8 @@
      <div class="rodape-content">
      <div>
        <h5>SOBRE NÓS</h5>
-       <H6>QUEM SOMOS</H6>
+       <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
+        <H6>QUEM SOMOS</H6>
      </div>
        <div>
          <h5>SOBRE NÓS</h5>
@@ -120,13 +122,14 @@
          </a>
        </div>
        <div>
-         <h5>SOBRE NÓS</h5>
-         <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
-           <H6>QUEM SOMOS</H6>
+         <h5>ATEDIMENTO</h5>
+         <!-- <a href="{% url 'EcoKids_Integracao:QuemSomos' %}"> -->
+           <H6>81 9999999</H6>
          </a>
        </div>
      </div>
    </div>
+   <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
 </body>
 </html>
   </div>
