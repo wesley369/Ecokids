@@ -8,5 +8,4 @@ urlpatterns = [
     path('quem-somos/', views.QuemSomos, name='QuemSomos'), 
     path('login/', views.Login, name='Login'), 
     path('Personagem/', views.Personagem, name='Personagem'), 
-    path('Card/', views.Card, name='Card'), 
 ]
