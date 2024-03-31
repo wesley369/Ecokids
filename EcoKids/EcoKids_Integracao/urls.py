@@ -9,4 +9,6 @@ urlpatterns = [
     path('login/', views.Login, name='Login'), 
     path('Personagem/', views.Personagem, name='Personagem'), 
     path('Card/', views.Card, name='Card'), 
+    path('login2/', views.Login2, name='Login2'),
+    path('signup/', views.signup, name='signup'),
 ]
