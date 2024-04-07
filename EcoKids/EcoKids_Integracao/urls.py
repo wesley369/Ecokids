@@ -11,4 +11,5 @@ urlpatterns = [
     path('Card/', views.Card, name='Card'), 
     path('login2/', views.Login2, name='Login2'),
     path('signup/', views.signup, name='signup'),
+    path('ToDoList/', views.ToDoList, name='ToDoList'),
 ]

@@ -22,6 +22,9 @@ def Personagem(request):
 def Card(request):
     return render(request, 'EcoKids_Integracao/Card.html')
 
+def ToDoList(request):
+    return render(request, 'EcoKids_Integracao/ToDoList.html')
+
 def Login2(request):
     if request.method == 'POST':
         data = json.loads(request.body)
