@@ -180,12 +180,12 @@ h1, h4{
     gap: 10px;
 }
 
-#to-do-list li:hover{
-    /* background-color: var(--color-dark3); */
+/* #to-do-list li:hover{
+     background-color: var(--color-dark3); 
     transition: .4s;
     border-radius: 1rem;
     padding-left: 1rem;
-}
+} */
 
 #btn-ok{
     border: none;
