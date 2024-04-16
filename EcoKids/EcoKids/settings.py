@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'EcoKids.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'teste',
+        'NAME': 'ecokids',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'leca',
         'HOST': 'localhost',
         'PORT': '3306',
     }

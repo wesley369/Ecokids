@@ -25,6 +25,9 @@ def Card(request):
 def ToDoList(request):
     return render(request, 'EcoKids_Integracao/ToDoList.html')
 
+def Mural(request):
+    return render(request, 'Ecokids_Integracao/Mural.html')
+
 def Login2(request):
     if request.method == 'POST':
         data = json.loads(request.body)

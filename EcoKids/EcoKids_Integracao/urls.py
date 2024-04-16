@@ -12,4 +12,5 @@ urlpatterns = [
     path('login2/', views.Login2, name='Login2'),
     path('signup/', views.signup, name='signup'),
     path('ToDoList/', views.ToDoList, name='ToDoList'),
+    path('Mural/', views.Mural, name='Mural'),
 ]
