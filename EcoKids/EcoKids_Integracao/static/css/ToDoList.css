@@ -56,7 +56,7 @@
 
 .fundo-verde {
     width: 100%;
-    height: 300px;
+    height: 100px;
     background-color: rgba(9, 208, 168, 1);
     text-align: center;
     display: flex;
@@ -79,6 +79,7 @@
 
 h1, h4{
     text-align: center;
+    margin-top: 10px;
 }
 
 /* body{
@@ -104,8 +105,10 @@ h1, h4{
     margin-right: 5%;
     border-radius: 23px;
     margin-bottom: 60px;
-    height: 500px; 
-    overflow-y: auto;
+    height: 300px; 
+    position: relative;
+    /* width: 500px; */
+    /* overflow-y: auto; */
 }
 
 
@@ -210,6 +213,71 @@ h1, h4{
     text-align: bottom;
 }
 
+
+.checkbox{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-item{
+  display: flex; /* Alinha os itens lado a lado */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+}
+.checkbox-item label {
+  font-size: 22px;
+  margin-left: 10px; /* Espaçamento entre o checkbox e o texto */
+}
+
+.checkbox-item input {
+  width: 17px;
+  height: 17px;
+}
+
+.estrela{
+  width: 2px;
+  position: absolute;
+  bottom: 10px; /* Distância do fundo (parte inferior) */
+  right: 10px; /* Distância da direita */
+  width: 50px; 
+}
+/* .checkbox {
+    position: relative;
+    user-select: none;
+    height: fit-content;
+
+}
+
+ .checkbox input{
+  position: absolute;
+  visibility: hidden;
+} 
+
+/* .checkbox label {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.checkbox label::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  transition: all .2s ease-in-out;
+}
+
+.checkbox input checked ~ label::before{
+  transform: rotate(40deg);
+} */ */
+
 .rodape {
     display: flex;
     flex-direction: row;
@@ -235,16 +303,16 @@ h1, h4{
     column-gap: 40px;
   }
   
-  .flores{
+  /* .flores{ */
     /* background-image: url(../img/Flores.png); */
-    background-size: cover; 
+    /* background-size: cover; 
     height: 500px; 
     width: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     margin-top: -20px; 
   }
-  
+   */
   .nuvem-bottom{
     height: 100%;
     background-size: cover; 
