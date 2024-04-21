@@ -43,7 +43,7 @@
     <!-- <h1>Metas de hoje: </h1> -->
   </div>
 
-  <div class="content">
+  <!-- <div class="content">
     <div class="checkbox">
       <div class="checkbox-item">
         <input type="checkbox" id="meta" checked>
@@ -75,8 +75,30 @@
         <label for="metas">Recolher o lixo espalhado pela sala de aula e jogar no lixo.</label>
       </div>
 
+      <div class="checkbox-item">
+        <input type="checkbox" id="meta" checked>
+        <label for="metas">Recolher o lixo espalhado pela sala de aula e jogar no lixo.</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="meta" checked>
+        <label for="metas">Recolher o lixo espalhado pela sala de aula e jogar no lixo.</label>
+      </div>
 
+
+    </div> -->
+
+    <div class="content">
+      <div class="checkbox">
+        {% for tarefa in tarefas %}
+        <div class="checkbox-item">
+          <input type="checkbox" id="meta_{{ tarefa.id }}" {% if tarefa.realizada %} checked {% endif %}>
+          <label for="meta_{{ tarefa.id }}">{{ tarefa.descricao }}</label>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+    
+
     <!-- <div class="content--add-item">
             <input type="text" id="input-new-task" placeholder="Digite sua nova task">
             <button onclick="newTask()" id="btn-new-task" title="Clique aqui para adicionar uma nova task">
@@ -92,7 +114,7 @@
         <div>
             <h4>Você consegue!</h4>
         </div> -->
-  </div>
+  <!-- </div> -->
   <!-- <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
   <div class="rodape">
     <div>

@@ -5,11 +5,12 @@ from django.http import JsonResponse, HttpResponseBadRequest
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.http import HttpResponseNotAllowed
-from .models import Usuario
+from .models import Usuario, Tarefa
 from django.utils import timezone
 from django.http import JsonResponse
 from .models import Forum
 from django.core.serializers import serialize
+from datetime import date
 
 def index(request):
     return render(request, 'EcoKids_Integracao/HomePage.html')
@@ -27,7 +28,8 @@ def Card(request):
     return render(request, 'EcoKids_Integracao/Card.html')
 
 def ToDoList(request):
-    return render(request, 'EcoKids_Integracao/ToDoList.html')
+    tarefas = Tarefa.objects.all() 
+    return render(request, 'EcoKids_Integracao/ToDoList.html', {'tarefas': tarefas})
 
 def Mural(request):
     return render(request, 'Ecokids_Integracao/Mural.html')
@@ -63,7 +65,6 @@ def Login2(request):
 
 def signup(request):
     if request.method == 'POST':
-        # Obter os dados do formulário enviado
         nome = request.POST.get('nome')
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -72,14 +73,13 @@ def signup(request):
         print(email)
         print(senha)
 
-        # Criar um novo objeto de usuário e salvar no banco de dados
+
         novo_usuario = Usuario(nome=nome, email=email, senha=senha)
         novo_usuario.save()
 
-        # Retornar uma resposta de sucesso
+
         return JsonResponse({'message': 'Usuário cadastrado com sucesso', 'success': True})
     else:
-        # Se a solicitação não for POST, retornar uma mensagem de erro
         return JsonResponse({'message': 'Método não permitido'}, status=405)
 
 def mural_comentario(request):
@@ -107,3 +107,13 @@ def mural_comentario(request):
         return JsonResponse(comentarios_dict, safe=False)
 
 
+# def lista_tarefas(request):
+#     tarefas = Tarefa.objects.filter(data_hora__date=date.today())
+
+#     return render(request, 'EcoKids_Integracao/ToDoList.html', {'tarefas': tarefas})
+
+
+
+# def lista_tarefas(request):
+#     tarefas = Tarefa.objects.all()
+#     return render(request, 'EcoKids_Integracao/ToDoList.html', {'tarefas': tarefas})    

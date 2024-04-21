@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
@@ -20,4 +21,15 @@ class Forum(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class Tarefa(models.Model):
+    # usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)  
+    descricao = models.CharField(max_length=255, null=True) 
+    # data_hora = models.DateTimeField(default=timezone.now)  
+    pontuacao = models.IntegerField(default=0, null=True) 
+    realizada = models.BooleanField(default=False, null=True)
+
+    def __str__(self):
+        return f"Tarefa de {self.usuario.username} - {self.descricao}"        
 
