@@ -99,12 +99,30 @@ h1 {
   content: url("../img/proximo.png");
 }
 
-.slick-prev {
+/* .slick-prev {
   left: 610px;
 }
 
 .slick-next {
   right: 700px;
+} */
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.slick-prev {
+  left: 20px; 
+}
+
+.slick-next {
+  right: 20px; 
 }
 
 .center .carrousel-itens {
@@ -214,4 +232,14 @@ h6{
 
 a {
   text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px); 
+  }
 }

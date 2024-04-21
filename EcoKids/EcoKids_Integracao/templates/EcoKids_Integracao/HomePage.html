@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoKids</title>
     {% load static %}
-    <!-- Pessoal eu tô configurando o front para que rode tudo no servidor, mas quando vai desenvolver usando live server dá uma quebrada nas coisas
-    então quando forem desenvolver o front para arquivos estáticos como imagem, link css, js.....  Façam da forma por exemplo com estou fazendo logo abaixo
-    com a imagem da logo. Para desenvolver, usem o caminho que já usamos normalmente, mas também coloquem o caminho que o servidor vai entender usando 
-    essas tags{% static 'img/EcoKids-Logo.png' %}. Podem deixar comentado o ccomando para o servidor e deixar o link normal dos arquivos que eu destroco isso
-    na hora de colcoar as modificações de vcs no servidor-->
     <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-    <!-- <link rel="shortcut icon" href="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" type="image/x-icon"> -->
 
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
@@ -21,8 +15,7 @@
 <body>
       <div class="menu-superior">
         <div>
-          <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo"> -->
-          <a href="{% url 'EcoKids_Integracao:Login' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"></a>
+          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
         </div> 
         <div class="barra">
           <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">Materiais</div>
@@ -33,12 +26,10 @@
           <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
         </div>
         <div>
-            <!-- <img src="/EcoKids/EcoKids_Integracao/static/img/pesquisar-logo.png" alt="pesquisar-logo" class="img-fluid"> -->
             <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
         </div>
       </div>
    <div>
-      <!-- <img id="banner" src="/EcoKids/EcoKids_Integracao/static/img/Banner.png" alt="banner" class="img-fluid"> -->
       <img id="banner" src="{% static 'img/Banner.png' %}" alt="banner" class="img-fluid">
    </div>
    <div>
@@ -76,38 +67,10 @@
     
     
   </div>
-  <!-- <div class="image-container">
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-    <div><img src="{% static 'img/nuvem.png' %}" alt="" ></div>
-
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-    <div><img src="/EcoKids/EcoKids_Integracao/static/img/5638058-removebg-preview (2) 1.png" alt="" ></div>
-</div> -->
 
   <img src="{% static 'img/nuvem_green_blue.png' %}" alt="nuvem" class="nuvem-green">
    <div class="rodape">
      <div>
-       <!-- <img class="EcoKids-Logo img-fluid" src="/EcoKids/EcoKids_Integracao/static/img/EcoKids-Logo.png" alt="EcoKids-Logo">  -->
        <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"> 
      </div>
      <div class="rodape-content">
@@ -133,7 +96,6 @@
    <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
 </body>
 </html>
-  </div>
    <!-- <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.js"></script> -->

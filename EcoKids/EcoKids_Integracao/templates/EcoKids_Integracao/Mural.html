@@ -6,16 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoKids</title>
   {% load static %}
-  <!-- Pessoal eu tô configurando o front para que rode tudo no servidor, mas quando vai desenvolver usando live server dá uma quebrada nas coisas
-    então quando forem desenvolver o front para arquivos estáticos como imagem, link css, js.....  Façam da forma por exemplo com estou fazendo logo abaixo
-    com a imagem da logo. Para desenvolver, usem o caminho que já usamos normalmente, mas também coloquem o caminho que o servidor vai entender usando 
-    essas tags{% static 'img/EcoKids-Logo.png' %}. Podem deixar comentado o ccomando para o servidor e deixar o link normal dos arquivos que eu destroco isso
-    na hora de colcoar as modificações de vcs no servidor-->
-  <!-- <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon"> -->
   <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
   <link rel="stylesheet" href="{% static 'css/Mural.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 </head>
@@ -33,10 +25,8 @@
       <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
       <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
       <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-      <div class="barra-colorida " style="background-color: rgba(255, 101, 79, 1);"></div>
     </div>
     <div>
-      <!-- <img src="/EcoKids/EcoKids_Integracao/static/img/pesquisar-logo.png" alt="pesquisar-logo" class="img-fluid"> -->
       <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
     </div>
   </div> 
@@ -68,25 +58,20 @@
     <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
     <div class="rodape">
       <div>
-        <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"> 
+        <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
       </div>
       <div class="rodape-content">
       <div>
         <h5>SOBRE NÓS</h5>
-        <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
-         <H6>QUEM SOMOS</H6>
+        <H6>QUEM SOMOS</H6>
       </div>
         <div>
           <h5>SOBRE NÓS</h5>
-          <a href="{% url 'EcoKids_Integracao:Personagem' %}">
-            <H6>Personagem</H6>
-          </a>
+          <H6>QUEM SOMOS</H6>
         </div>
         <div>
           <h5>ATEDIMENTO</h5>
-          <!-- <a href="{% url 'EcoKids_Integracao:QuemSomos' %}"> -->
-            <H6>81 9999999</H6>
-          </a>
+            <H6>QUEM SOMOS</H6>
         </div>
       </div>
     </div>

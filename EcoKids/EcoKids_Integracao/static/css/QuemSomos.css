@@ -141,6 +141,7 @@
   padding-top: 20px;
   margin-top: -10px;
   position: relative;
+ 
 }
 .rodape > div > img {
   border-radius: 50%;
@@ -151,16 +152,7 @@
   column-gap: 40px;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} 
+
 .nuvem-bottom{
   height: 100%;
   background-size: cover; 
@@ -176,5 +168,56 @@
   width: 100%; 
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 40px; 
+  margin-top: -20px; 
 }
+
+h5{
+  color: white;
+}
+
+h6{
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .menu-superior {
+    margin: 0 5%;
+  }
+  .barra {
+    width: 40%;
+    height: 20px;
+  }
+  .img-fluid {
+    width: 40%;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: large;
+  }
+  .cards {
+    grid-template-columns: auto auto;
+  }
+  .cards-content {
+    height: 200px;
+    width: 70%;
+    justify-self: center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
