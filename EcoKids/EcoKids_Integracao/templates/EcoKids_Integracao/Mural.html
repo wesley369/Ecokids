@@ -44,10 +44,18 @@
     <h1 class="titulo">Deixe seu comentário</h1>
     </div>
     <section class="conteudo">
-      <div>
-        <form class="formulario" id="formulario-de-comentarios">
-          <input type="text" id="input-formulario" class="input-de-texto" placeholder="O que você tem a dizer?">
-          <button>Enviar</button>
+      <div class="formulario-container">
+        {% csrf_token %}
+        <form class="formulario" id="formulario-de-comentarios" method="post">
+          <div class="input-container">
+            <input type="text" id="input-titulo" class="input-de-texto" placeholder="Título" maxlength="30">
+          </div>
+          <div class="input-container">
+            <textarea id="input-formulario" class="input-de-texto comentario" placeholder="Comentário" maxlength="500"></textarea>
+          </div>
+          <div class="input-container-button">
+            <button type="submit">Enviar</button>
+          </div>
           <p id="mensagem-invalida"></p>
         </form>
       </div>

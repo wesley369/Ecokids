@@ -6,37 +6,65 @@
 
 .conteudo {
   display: flex;
-  align-items: baseline;
-  justify-content: space-evenly;
-  max-width: 80%;
-  margin: 0 auto;
-  margin-top: 70px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .formulario {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 70%;
+  margin-bottom: 20px; 
+}
+
+.formulario-container {
+  position: relative; 
+  left: 50%;
+  transform: translateX(-72%);
+  top: 0;
+  z-index: 1;
+  width: 70%;
 }
 
 .formulario button {
   background-color: rgb(129, 6, 160);
-  padding: 5px; 
+  padding: 15px 60px;
   border: none;
   color: white;
-  border-radius: 10px; 
-  width: 200px; 
-  font-size: 16px; 
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.formulario input {
-  padding: 10px; /* Aumenta o padding do input */
-  margin-bottom: 20px; /* Adiciona uma margem inferior para separar o input do botão */
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.formulario textarea {
+  height: 100px;
 }
 
 .comentario {
   font-size: 16px; 
-  background-color: rgba(134, 200, 154, 1);;
-  padding: 20px; 
+  background-color: rgba(134, 200, 154, 1);
+  padding: 10px; 
+  top: 10px;
+  margin-bottom: 20px; 
   border-radius: 10px; 
   width: 700px; 
   word-wrap: break-word; 
@@ -71,9 +99,11 @@
   font-size: 2px;
   text-decoration: none;
 }
+
 .rodape > div > img {
   border-radius: 50%;
 }
+
 .rodape-content {
   display: flex;
   flex-direction: row;
@@ -90,6 +120,7 @@
     transform: translateY(0);
   }
 } 
+
 .nuvem-bottom{
   height: 100%;
   background-size: cover; 
@@ -123,3 +154,23 @@
   align-items: center;
   color: white;
 }
+
+.input-container-button {
+  background-color: rgb(129, 6, 160);
+  padding: 0; 
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content; 
+  margin: 0 auto; 
+}
+
+#todos-os-comentarios {
+  max-width: 100%; 
+  padding: 10px; 
+}
+
+
+
