@@ -243,3 +243,16 @@ a {
     top: calc(50% - 15px); 
   }
 }
+
+/* Adiciona um estilo para o avatar selecionado */
+.selected {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+  opacity: 1; /* Mantém a opacidade total */
+  border-radius: 50%; /* Garante que a borda seja circular */
+}
+
+/* Diminui a opacidade dos avatares não selecionados */
+.center .carrousel-itens img:not(.selected) {
+  opacity: 0.7; /* Reduz a opacidade */
+}
+

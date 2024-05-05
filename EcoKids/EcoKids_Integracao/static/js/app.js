@@ -149,11 +149,27 @@ document.getElementById("btn").addEventListener("click", function(event) {
         alert(data.message); // Exibe a mensagem de resposta do servidor
         if (data.success) {
             // Redireciona para a página inicial
-            window.location.href = '/'; // Redireciona para a HomePage.html
+            window.location.href = '/Personagem'; // Redireciona para a HomePage.html
         }
     })
     .catch(error => {
         console.error('Erro ao enviar solicitação:', error);
     });
 });
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+          
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 

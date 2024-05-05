@@ -19,14 +19,17 @@
         <div class="barra">
           <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">Materiais</div>
           <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);">Quiz</div>
+          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> <!-- Alterado de "Quiz" para "Sair" -->
           <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
           <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
           <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
         </div>
         <div>
-            <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
-        </div>
+          <p style="color: black;" id="avatar_url_placeholder"></p>
+          <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image"> 
+          
+          
+      </div>
       </div>
    <div>
       <img id="banner" src="{% static 'img/Banner.png' %}" alt="banner" class="img-fluid">
@@ -98,5 +101,12 @@
    <!-- <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.js"></script> -->
+   <script src="{% static 'js/HomePage.js' %}"></script>
+   <script>
+    var staticUrl = "{% static '' %}";
+</script>
+<script>
+  const user_id = "{{ user_id }}";
+</script>
 </body>
 </html>

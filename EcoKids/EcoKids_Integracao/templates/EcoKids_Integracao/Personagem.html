@@ -15,104 +15,113 @@
     <link rel="stylesheet" href="{% static 'css/Personagem.css' %}">
 </head>
 <body>
-      <div class="menu-superior">
-        <div>
-          <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"></a>
-        </div> 
-        <div class="barra">
-            <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">Materiais</div>
-            <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-            <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);">Ranking</div>
-            <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-            <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-            <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-          </div>
-        <div>
-            <img src="{% static 'img/pesquisar-logo.png' %}" alt="pesquisar-logo" class="img-fluid">
-        </div>
-      </div>
-      <div class="carrousel">
-        <div>
-            <h1>
-                CRIE SEU PERSONAGEM
-            </h1>
-        </div>
+<div class="menu-superior">
+    <div>
+        <a href="{% url 'EcoKids_Integracao:HomePage' %}">
+            <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
+        </a>
+    </div> 
+    <div class="barra">
+        <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
+          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> <!-- Alterado de "Quiz" para "Sair" -->
+          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
+          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
+          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
+    </div>
+    <div>
+        
+        <p style="color: black;" id="avatar_url_placeholder"></p>
+          <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="display: none;"> 
+   
+    </div>
+</div>
+<div class="carrousel">
+    <div>
+        <h1>
+            CRIE SEU PERSONAGEM
+        </h1>
+    </div>
+    <form method="post" id="personagem-form"> <!-- Adicionando o formulário -->
+        {% csrf_token %}
         <div class="center">
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
-                </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="">
-                </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-wesley.png' %}" alt="" srcset="">
-                </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-rafael.png' %}" alt="" srcset="">
-                </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/laurinha-avatar.webp' %}" alt="" srcset="">
-                </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="">
-                </div>
-           
+            <div class="carrousel-itens">
+                <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="1"> <!-- Adicionando data-id para cada avatar -->
+            </div>
+            <div class="carrousel-itens">
+                <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="" id="2">
+            </div>
+            <div class="carrousel-itens">
+                <img src="{% static 'img/avatar-wesley.png' %}" alt="" srcset="" id="3">
+            </div>
+            <div class="carrousel-itens">
+                <img src="{% static 'img/avatar-rafael.png' %}" alt="" srcset="" id="4">
+            </div>
+            <div class="carrousel-itens">
+                <img src="{% static 'img/laurinha-avatar.webp' %}" alt="" srcset="" id="5">
+            </div>
+            <div class="carrousel-itens">
+                <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="6">
+            </div>
         </div>
         <div class="input">
-            <input type="text" placeholder="Personagem">
+            <input type="text" name="nome_personagem" placeholder="Personagem"> <!-- Campo para o nome do personagem -->
         </div>
-        <DIV class="botao">
-            <button type="submit">VAMOS JOGAR</button>
-        </DIV>
+        <div class="botao">
+            <button type="submit">VAMOS JOGAR</button> <!-- Botão de envio do formulário -->
+        </div>
+    </form> <!-- Fechando o formulário -->
+</div>
+<img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
+<div class="rodape">
+    <div>
+        <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
     </div>
-    <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-    <div class="rodape">
+    <div class="rodape-content">
         <div>
-          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
-        </div>
-        <div class="rodape-content">
-        <div>
-          <h5>SOBRE NÓS</h5>
-          <H6>QUEM SOMOS</H6>
-        </div>
-          <div>
             <h5>SOBRE NÓS</h5>
             <H6>QUEM SOMOS</H6>
-          </div>
-          <div>
-            <h5>SOBRE NÓS</h5>
-              <H6>QUEM SOMOS</H6>
-          </div>
         </div>
-      </div>
-      <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-    <script>
-        $('.center').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 5,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: true,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
-                    }
+        <div>
+            <h5>SOBRE NÓS</h5>
+            <H6>QUEM SOMOS</H6>
+        </div>
+        <div>
+            <h5>SOBRE NÓS</h5>
+            <H6>QUEM SOMOS</H6>
+        </div>
+    </div>
+</div>
+<img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
+<script>
+    $('.center').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 5,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
                 }
-            ]
-        });
-        </script>
-      </script> 
-   </body>
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+</script>
+<script src="{% static 'js/Personagem.js' %}"></script>
+<script>
+    var staticUrl = "{% static '' %}";
+</script>
+</body>
 </html>
