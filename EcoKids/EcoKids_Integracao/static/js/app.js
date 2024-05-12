@@ -120,23 +120,23 @@ function login() {
 
 
 document.getElementById("btn").addEventListener("click", function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
+    event.preventDefault();
     
-    // Obter o token CSRF do cookie
+
     var csrftoken = getCookie('csrftoken');
 
-    // Coletar os valores do formulário
+
     var nome = document.getElementById("nome").value;
     var email = document.getElementById("email2").value;
     var senha = document.getElementById("senha2").value;
 
-    // Criar um objeto FormData e adicionar os valores do formulário
+
     var formData = new FormData();
     formData.append("nome", nome);
     formData.append("email", email);
     formData.append("senha", senha);
     
-    // Envie a solicitação para o endpoint de registro (signup), incluindo o token CSRF
+
     fetch('/signup/', {
         method: 'POST',
         headers: {
@@ -146,10 +146,10 @@ document.getElementById("btn").addEventListener("click", function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message); // Exibe a mensagem de resposta do servidor
+        alert(data.message);
         if (data.success) {
-            // Redireciona para a página inicial
-            window.location.href = '/Personagem'; // Redireciona para a HomePage.html
+        
+            window.location.href = '/Personagem';
         }
     })
     .catch(error => {

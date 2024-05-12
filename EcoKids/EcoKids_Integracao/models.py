@@ -9,8 +9,8 @@ class Usuario(models.Model):
     email = models.EmailField(unique=True)
     senha = models.CharField(max_length=128)
     personagem_selecionado = models.CharField(max_length=100, blank=True, null=True)
-    avatar_data_id = models.CharField(max_length=100, blank=True, null=True)  # Adicionando campo para o data-id do avatar selecionado
-    avatar_url = models.CharField(max_length=255, blank=True, null=True)  # Campo para armazenar o URL do avatar selecionado
+    avatar_data_id = models.CharField(max_length=100, blank=True, null=True)  
+    avatar_url = models.CharField(max_length=255, blank=True, null=True)  
 
     def __str__(self):
         return self.nome  

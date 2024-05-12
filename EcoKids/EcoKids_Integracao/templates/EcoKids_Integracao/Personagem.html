@@ -23,7 +23,7 @@
     </div> 
     <div class="barra">
         <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> <!-- Alterado de "Quiz" para "Sair" -->
+          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> 
           <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
           <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
           <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
@@ -41,11 +41,11 @@
             CRIE SEU PERSONAGEM
         </h1>
     </div>
-    <form method="post" id="personagem-form"> <!-- Adicionando o formulário -->
+    <form method="post" id="personagem-form"> 
         {% csrf_token %}
         <div class="center">
             <div class="carrousel-itens">
-                <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="1"> <!-- Adicionando data-id para cada avatar -->
+                <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="1"> 
             </div>
             <div class="carrousel-itens">
                 <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="" id="2">
@@ -64,12 +64,12 @@
             </div>
         </div>
         <div class="input">
-            <input type="text" name="nome_personagem" placeholder="Personagem"> <!-- Campo para o nome do personagem -->
+            <input type="text" name="nome_personagem" placeholder="Personagem"> 
         </div>
         <div class="botao">
-            <button type="submit">VAMOS JOGAR</button> <!-- Botão de envio do formulário -->
+            <button type="submit">VAMOS JOGAR</button> 
         </div>
-    </form> <!-- Fechando o formulário -->
+    </form> 
 </div>
 <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
 <div class="rodape">

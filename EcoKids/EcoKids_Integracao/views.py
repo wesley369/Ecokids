@@ -8,22 +8,17 @@ from django.contrib.auth.hashers import make_password
 
 def get_avatar_url(request):
     user_avatar_url = None
-    
-    # Verifica se o usuário está logado com base no ID do usuário armazenado na sessão
     user_id = request.session.get('user_id')
     if user_id:
         try:
-            # Recupera o usuário com base no ID da sessão
             usuario = Usuario.objects.get(id=user_id)
             
-            # Verifica se o usuário possui um avatar
             if usuario.avatar_url:
                 user_avatar_url = usuario.avatar_url
                 print("A url do avatar é: " + user_avatar_url)
         except Usuario.DoesNotExist:
             pass
     
-    # Retorna a URL do avatar como uma resposta JSON
     return JsonResponse({'user_avatar_url': user_avatar_url})
 
 def index(request):
@@ -40,37 +35,31 @@ def obter_avatar_url_por_id(avatar_id):
         avatar = Avatar.objects.get(id=avatar_id)
         return avatar.url
     except Avatar.DoesNotExist:
-        # Se o avatar com o ID especificado não existir, retorne um URL padrão ou None
         return None    
         
 from django.urls import reverse
 
 def Personagem(request):
     if request.method == 'POST':
-        # Recebendo os dados do formulário
-        avatar_id = request.POST.get('avatar_id')  # Recebendo o ID do avatar selecionado
-        nome_personagem = request.POST.get('nome_personagem')  # Recebendo o nome do personagem
+        avatar_id = request.POST.get('avatar_id') 
+        nome_personagem = request.POST.get('nome_personagem') 
 
-        # Verificando se o usuário está logado com base no ID do usuário armazenado na sessão
         user_id = request.session.get('user_id')
         if user_id:
             try:
                 usuario = Usuario.objects.get(id=user_id)
-                # Salvando o personagem selecionado e o ID do avatar para o usuário logado
                 usuario.personagem_selecionado = nome_personagem
                 usuario.avatar_data_id = avatar_id
                 avatar_url = obter_avatar_url_por_id(avatar_id)
                 print("A url do avatar é: " + avatar_url)
-                usuario.avatar_url = avatar_url  # Salva a URL da imagem no usuário
+                usuario.avatar_url = avatar_url  
                 usuario.save()
                 
-                # Retorna a URL do avatar como uma resposta JSON
                 return JsonResponse({'avatar_url': avatar_url})
 
             except Usuario.DoesNotExist:
                 pass
 
-    # Se for uma solicitação GET, simplesmente renderizar o template
     return render(request, 'EcoKids_Integracao/Personagem.html')
 
 def Card(request):
@@ -92,7 +81,7 @@ def Login2(request):
         try:
             user = Usuario.objects.get(email=email)
             if user.senha == password:
-                request.session['user_id'] = user.id  # Armazena o ID do usuário na sessão
+                request.session['user_id'] = user.id  
                 return JsonResponse({'message': 'Login successful'}, status=200)
             else:
                 return JsonResponse({'message': 'Invalid credentials'}, status=401)
@@ -112,7 +101,6 @@ def signup(request):
         novo_usuario = Usuario(nome=nome, email=email, senha=senha)
         novo_usuario.save()
 
-        # Após salvar o usuário, podemos armazenar seu ID na sessão
         request.session['user_id'] = novo_usuario.id
 
         return JsonResponse({'message': 'Usuário cadastrado com sucesso', 'success': True})
@@ -146,14 +134,11 @@ def mural_comentario(request):
 
 
 def logout(request):
-    # Lógica para remover os dados de autenticação da sessão
     if 'user_id' in request.session:
-        del request.session['user_id']  # Removendo o ID do usuário da sessão
+        del request.session['user_id']  
     
-    # Defina a URL do avatar padrão
     default_avatar_url = 'img/avatar-rafael.png'
     print("Logout: " + default_avatar_url)
-    # Retorna a URL do avatar padrão como uma resposta JSON
     return JsonResponse({'user_avatar_url': default_avatar_url})
 
 

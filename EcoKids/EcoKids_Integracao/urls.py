@@ -16,5 +16,4 @@ urlpatterns = [
     path('AdicionarComentario/', views.mural_comentario, name='AdicionarComentario'),
     path('logout/', views.logout, name='logout'),
     path('get_avatar_url/', views.get_avatar_url, name='get_avatar_url'),
-
 ]
