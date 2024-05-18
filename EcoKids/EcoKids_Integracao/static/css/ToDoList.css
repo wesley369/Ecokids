@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
@@ -12,7 +12,8 @@
 }
 
 .menu-superior {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
   justify-content: space-between;
   align-items: center;
   margin-left: 5%;
@@ -25,7 +26,7 @@
 .barra {
   display: flex;
   flex-direction: row;
-  width: 53%;
+  width: 80%;
   height: 42px;
   justify-self: center;
 }
@@ -39,7 +40,7 @@
   transition: width 0.3s ease, background-color 0.3s ease;
   text-decoration-color: white;
   height: 90%;
-  text-shadow:  2px 2px rgba(0, 0, 0, 0.2)
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .barra-colorida:hover {
@@ -64,53 +65,52 @@
   align-items: center;
 }
 
- 
-:root{
-    --color-dark: rgb(14, 14, 14);
-    --color-dark2: rgb(32, 32, 32);
-    --color-dark3: rgb(22, 22, 22);
-    --color-white: #fff;
-    --color-green: rgb(103, 195, 80);
-    --color-green2: rgb(51, 149, 26);
-    --color-red: rgb(184, 40, 35);
-    --color-red2: rgb(146, 22, 17);
+:root {
+  --color-dark: rgb(14, 14, 14);
+  --color-dark2: rgb(32, 32, 32);
+  --color-dark3: rgb(22, 22, 22);
+  --color-white: #fff;
+  --color-green: rgb(103, 195, 80);
+  --color-green2: rgb(51, 149, 26);
+  --color-red: rgb(184, 40, 35);
+  --color-red2: rgb(146, 22, 17);
 }
 
-h1, h4{
-    text-align: center;
-    margin-top: 10px;
+h1,
+h4 {
+  text-align: center;
+  margin-top: 10px;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    font-family: 'Lato';
-    background-color: rgba(250, 143, 203, 1);
-    color: var(--color-white);
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 23px;
-    margin-bottom: 60px;
-    height: 500px; 
-    position: relative;
-    /* width: 500px; */
-    /*overflow-y: auto;*/ 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-family: "Lato";
+  background-color: rgba(250, 143, 203, 1);
+  color: var(--color-white);
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 23px;
+  margin-bottom: 60px;
+  height: 500px;
+  position: relative;
+  /* width: 500px; */
+  /*overflow-y: auto;*/
 }
 
-
-.checkbox{
+.checkbox {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.checkbox-item{
-  display: flex; 
-  align-items: center; 
-  margin-bottom: 20px; 
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .checkbox-item label {
   font-size: 22px;
@@ -122,14 +122,13 @@ h1, h4{
   height: 17px;
 }
 
-.estrela{
+.estrela {
   width: 2px;
   position: absolute;
-  bottom: 10px; 
-  right: 10px; 
-  width: 50px; 
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
 }
-
 
 .rodape {
   display: flex;
@@ -145,7 +144,6 @@ h1, h4{
   padding-top: 20px;
   margin-top: -10px;
   position: relative;
- 
 }
 .rodape > div > img {
   border-radius: 50%;
@@ -156,30 +154,29 @@ h1, h4{
   column-gap: 40px;
 }
 
-
-.nuvem-bottom{
+.nuvem-bottom {
   height: 100%;
-  background-size: cover; 
-  width: 100%; 
+  background-size: cover;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
-.nuvem-green{
-  height: 100%; 
-  background-size: cover; 
-  width: 100%; 
+.nuvem-green {
+  height: 100%;
+  background-size: cover;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
-h5{
+h5 {
   color: white;
 }
 
-h6{
+h6 {
   color: white;
   text-decoration: none;
 }
@@ -224,6 +221,3 @@ a {
     transform: translateY(0);
   }
 }
-
-
-

@@ -1,86 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/QuemSomos.css' %}">
-    <title>Quem SOMOS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/QuemSomos.css' %}">
+  <title>Quem SOMOS</title>
 </head>
+
 <body>
-    <div class="menu-superior">
-        <div>
-          <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"></a>
-        </div>
-        <div class="barra">
-          <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> 
-          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-        </div>
-        <div>
-          <p style="color: black;" id="avatar_url_placeholder"></p>
-          <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image"> 
-        </div>
+  <div class="menu-superior">
+    <div>
+      <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"></a>
+    </div>
+    <div class="barra">
+      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
+        <a class="fontebarra" href="{% url 'EcoKids_Integracao:HomePage' %}#materiais">Materiais</a>
       </div>
-      <div class="fundo-verde">
-        <h1>
-            QUEM SOMOS
-        </h1>
+      <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
+      <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
+      <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
+      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div>
+    </div>
+    <div>
+      <p style="color: black;" id="avatar_url_placeholder"></p>
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image">
+    </div>
+  </div>
+  <div class="fundo-verde">
+    <h1>
+      QUEM SOMOS
+    </h1>
+  </div>
+  <div class="texto">
+    ECOKIDS é um projeto dedicado a educar e conscientizar crianças sobre a importância da preservação do meio ambiente de uma forma lúdica e educativa. Através de atividades interativas, histórias e projetos práticos, o ECOKIDS busca inspirar nas crianças o amor e o cuidado pelo nosso planeta desde cedo.
+  </div>
+  <div class="cards">
+    <div class="cards-content" id="card-tutu">
+      <img src="{% static 'img/avatar-tuanny.png' %}" alt="">
+      <h4>TUTU</h4>
+    </div>
+    <div class="cards-content" id="card-ale">
+      <img src="{% static 'img/avatar-alessandra.png' %}" alt="">
+      <h4>ALÊ</h4>
+    </div>
+    <div class="cards-content" id="card-laurinha">
+      <img src="{% static 'img/laurinha-avatar.webp' %}" alt="">
+      <h4>Laurinha</h4>
+    </div>
+  </div>
+  <div class="cards-meninos" id="card-weslinho">
+    <div class="cards-content">
+      <img src="{% static 'img/avatar-wesley.png' %}" alt="">
+      <h4>WESLEY</h4>
+    </div>
+    <div class="cards-content" id="card-rafa">
+      <img src="{% static 'img/avatar-rafael.png' %}" alt="">
+      <h4>RAFA</h4>
+    </div>
+  </div>
+  <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
+  <div class="rodape">
+    <div>
+      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo">
+    </div>
+    <div class="rodape-content">
+      <div>
+        <h5>SOBRE NÓS</h5>
+        <H6>QUEM SOMOS</H6>
       </div>
-      <div class="texto">
-        ECOKIDS é um projeto dedicado a educar e conscientizar crianças sobre a importância da preservação do meio ambiente de uma forma lúdica e educativa. Através de atividades interativas, histórias e projetos práticos, o ECOKIDS busca inspirar nas crianças o amor e o cuidado pelo nosso planeta desde cedo.
-      </div>
-      <div class="cards">
-        <div class="cards-content" id="card-tutu">
-            <img src="{% static 'img/avatar-tuanny.png' %}" alt="">
-            <h4>TUTU</h4>
-        </div>
-        <div class="cards-content" id="card-ale">
-            <img src="{% static 'img/avatar-alessandra.png' %}" alt="">
-            <h4>ALÊ</h4>
-        </div>
-        <div class="cards-content" id="card-laurinha">
-          <img src="{% static 'img/laurinha-avatar.webp' %}" alt="">
-          <h4>Laurinha</h4>
-        </div>  
-      </div>
-      <div class="cards-meninos" id="card-weslinho">
-        <div class="cards-content">
-            <img src="{% static 'img/avatar-wesley.png' %}" alt="">
-            <h4>WESLEY</h4>
-        </div>
-        <div class="cards-content" id="card-rafa">
-            <img src="{% static 'img/avatar-rafael.png' %}" alt="">
-            <h4>RAFA</h4>
-        </div>
-      </div>
-      <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-      <div class="rodape">
-        <div>
-          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
-        </div>
-        <div class="rodape-content">
-        <div>
-          <h5>SOBRE NÓS</h5>
-          <H6>QUEM SOMOS</H6>
-        </div>
-          <div>
+      <!-- <div>
             <h5>SOBRE NÓS</h5>
             <H6>QUEM SOMOS</H6>
-          </div>
-          <div>
-            <h5>ATEDIMENTO</h5>
-              <H6>QUEM SOMOS</H6>
-          </div>
-        </div>
+          </div> -->
+      <div>
+        <h5>ATENDIMENTO</h5>
+        <H6>QUEM SOMOS</H6>
       </div>
-      <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-      <script src="{% static 'js/TodoList.js' %}"></script>
-      <script>
-        var staticUrl = "{% static '' %}";
-    </script>
-   </body>
+    </div>
+  </div>
+  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
+  <script src="{% static 'js/TodoList.js' %}"></script>
+  <script>
+    var staticUrl = "{% static '' %}";
+  </script>
+</body>
+
 </html>

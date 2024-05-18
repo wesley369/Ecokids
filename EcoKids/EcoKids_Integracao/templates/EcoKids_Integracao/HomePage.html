@@ -1,112 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoKids</title>
-    {% load static %}
-    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoKids</title>
+  {% load static %}
+  <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
 
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
-    
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
+
 </head>
+
 <body>
-      <div class="menu-superior">
-        <div>
-          <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
-        </div> 
-        <div class="barra">
-          <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">Materiais</div>
-          <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> 
-          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-        </div>
-        <div>
-          <p style="color: black;" id="avatar_url_placeholder"></p>
-          <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image"> 
-          
-          
+  <div class="menu-superior">
+    <div>
+      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
+    </div>
+    <div class="barra">
+      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
+        <a class="fontebarra" href="#materiais">Materiais</a>
       </div>
-      </div>
-   <div>
-      <img id="banner" src="{% static 'img/Banner.png' %}" alt="banner" class="img-fluid">
-   </div>
-   <div>
-      <h1>
-          <span>EQUILIBRIO ENTRE</span> BRINCAR <span>E</span> <br>APRENDER</br>
-      </h1>
-   </div>
-   <div class="cards">
-    <div class="cards-content">  
+      <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a class="fontebarra" href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
+      <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
+      <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
+      <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
+      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div>
     </div>
+    <div>
+      <p style="color: black;" id="avatar_url_placeholder"></p>
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image">
 
-    <div class="cards-content">   
+
     </div>
-
-    <div class="cards-content"> 
-    </div>
-
-   </div>
-   <img src="{% static 'img/Flores.png' %}" alt="Flores" class="flores">
-
-   <div class ="fundo-verde">
+  </div>
+  <div>
+    <img id="banner" src="{% static 'img/Banner.png' %}" alt="banner" class="img-fluid">
+  </div>
+  <div>
     <h1>
-      EXPLORE NOSSO MUNDO!!
+      <span>EQUILIBRIO ENTRE</span> BRINCAR <span>E</span> <br>APRENDER</br>
     </h1>
-    <div class="cards">
-      <a href="{% url 'EcoKids_Integracao:Card' %}">
-        <div class="cards-content bg-image-1"></div>
-      </a>
-      <div class="cards-content bg-image-2"></div>
-      <div class="cards-content bg-image-3"></div>
-      <div class="cards-content bg-image-4"></div>
-      <div class="cards-content bg-image-5"></div>
-      <div class="cards-content bg-image-6"></div>
+  </div>
+  <div class="cards">
+    <a class="link-container" href="{% url 'EcoKids_Integracao:Mural' %}">
+      <div class="cards-content bg-image-7"></div>
+    </a>
+    <a href="{% url 'EcoKids_Integracao:ToDoList' %}">
+      <div class="cards-content bg-image-8"></div>
+    </a>
+
+    <a href="{% url 'EcoKids_Integracao:Mural' %}">
+      <div class="cards-content bg-image-9"></div>
+    </a>
+
+  </div>
+  <img src="{% static 'img/Flores.png' %}" alt="Flores" class="flores">
+
+  <div id="materiais">
+    <div class="fundo-verde">
+      <h1>
+        EXPLORE NOSSO MUNDO!!
+      </h1>
+      <div class="cards">
+        <a href="{% url 'EcoKids_Integracao:Card' %}">
+          <div class="cards-content bg-image-1"></div>
+        </a>
+        <div class="cards-content bg-image-2"></div>
+        <div class="cards-content bg-image-3"></div>
+        <div class="cards-content bg-image-4"></div>
+        <div class="cards-content bg-image-5"></div>
+        <div class="cards-content bg-image-6"></div>
+      </div>
+
+
     </div>
-    
-    
   </div>
 
   <img src="{% static 'img/nuvem_green_blue.png' %}" alt="nuvem" class="nuvem-green">
-   <div class="rodape">
-     <div>
-       <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"> 
-     </div>
-     <div class="rodape-content">
-     <div>
-       <h5>SOBRE NÓS</h5>
-       <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
-        <H6>QUEM SOMOS</H6>
-     </div>
-       <div>
-         <h5>SOBRE NÓS</h5>
-         <a href="{% url 'EcoKids_Integracao:Personagem' %}">
-           <H6>Personagem</H6>
-         </a>
-       </div>
-       <div>
-         <h5>ATEDIMENTO</h5>
-         <!-- <a href="{% url 'EcoKids_Integracao:QuemSomos' %}"> -->
-           <H6>81 9999999</H6>
-         </a>
-       </div>
-     </div>
-   </div>
-   <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
+  <div class="rodape">
+    <div>
+      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
+    </div>
+    <div class="rodape-content">
+      <div>
+        <h5>SOBRE NÓS</h5>
+        <a href="{% url 'EcoKids_Integracao:QuemSomos' %}">
+          <H6>QUEM SOMOS</H6>
+      </div>
+      <!-- <div>
+        <h5>SOBRE NÓS</h5>
+        <a href="{% url 'EcoKids_Integracao:Personagem' %}">
+          <H6>Personagem</H6>
+        </a>
+      </div>
+      <div> -->
+      <h5>ATENDIMENTO</h5>
+      <!-- <a href="{% url 'EcoKids_Integracao:QuemSomos' %}"> -->
+      <H6>81 9999999</H6>
+      </a>
+    </div>
+  </div>
+  </div>
+  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
 </body>
+
 </html>
-   <!-- <script src="js/jquery-3.3.1.slim.min.js"></script>
+<!-- <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.js"></script> -->
-   <script src="{% static 'js/HomePage.js' %}"></script>
-   <script>
-    var staticUrl = "{% static '' %}";
+<script src="{% static 'js/HomePage.js' %}"></script>
+<script>
+  var staticUrl = "{% static '' %}";
 </script>
 <script>
   const user_id = "{{ user_id }}";
 </script>
 </body>
+
 </html>

@@ -17,72 +17,70 @@
       <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"></a>
     </div>
     <div class="barra">
-      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">Materiais</div>
-          <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-          <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div> 
-          <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-          <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-          <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
+      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
+        <a class="fontebarra" href="{% url 'EcoKids_Integracao:HomePage' %}#materiais">Materiais</a>
+      </div>
+      <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
+      <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
+      <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
+      <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
+      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div>
     </div>
     <div>
       <p style="color: black;" id="avatar_url_placeholder"></p>
-          <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image">
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image">
     </div>
-  </div> 
-    <div class="fundo">
+  </div>
+  <div class="fundo">
     <h1 class="titulo">Deixe seu comentário</h1>
-    </div>
-    <section class="conteudo">
-      <div class="formulario-container">
-        {% csrf_token %}
-        <form class="formulario" id="formulario-de-comentarios" method="post">
-          <div class="input-container">
-            <input type="text" id="input-titulo" class="input-de-texto" placeholder="Título" maxlength="30">
-          </div>
-          <div class="input-container">
-            <textarea id="input-formulario" class="input-de-texto comentario" placeholder="Comentário" maxlength="500"></textarea>
-          </div>
+  </div>
+  <section class="conteudo">
+    <div class="formulario-container">
+      {% csrf_token %}
+      <form class="formulario" id="formulario-de-comentarios" method="post">
+        <div class="input-container">
+          <input type="text" id="input-titulo" class="input-de-texto" placeholder="Título" maxlength="30">
+        </div>
+        <div class="input-container">
+          <textarea id="input-formulario" class="input-de-texto comentario" placeholder="Comentário" maxlength="500"></textarea>
           <div class="input-container-button">
             <button type="submit">Enviar</button>
           </div>
-          <p id="mensagem-invalida"></p>
-        </form>
-      </div>
-      <div id="todos-os-comentarios">
-        <h3>Comentários</h3>
-      </div>   
-    </section>
-    
-    <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-    <div class="rodape">
-      <div>
-        <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"> 
-      </div>
-      <div class="rodape-content">
+        </div>
+
+        <p id="mensagem-invalida"></p>
+      </form>
+    </div>
+    <div id="todos-os-comentarios">
+      <h3>Comentários</h3>
+    </div>
+  </section>
+
+  <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
+  <div class="rodape">
+    <div>
+      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo">
+    </div>
+    <div class="rodape-content">
       <div>
         <h5>SOBRE NÓS</h5>
         <H6>QUEM SOMOS</H6>
       </div>
-        <div>
-          <h5>SOBRE NÓS</h5>
-          <H6>QUEM SOMOS</H6>
-        </div>
-        <div>
-          <h5>ATEDIMENTO</h5>
-            <H6>QUEM SOMOS</H6>
-        </div>
+      <!-- <div>
+        <h5>SOBRE NÓS</h5>
+        <H6>QUEM SOMOS</H6>
+      </div> -->
+      <div>
+        <h5>ATENDIMENTO</h5>
+        <H6>QUEM SOMOS</H6>
       </div>
     </div>
-    <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-    <script src="{% static 'js/Mural.js' %}"></script>
-    <script>
-      var staticUrl = "{% static '' %}";
+  </div>
+  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
+  <script src="{% static 'js/Mural.js' %}"></script>
+  <script>
+    var staticUrl = "{% static '' %}";
   </script>
-  </body>
-  </html>
-  
+</body>
 
-  
-
-    
-  
+</html>

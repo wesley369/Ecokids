@@ -10,7 +10,8 @@
 }
 
 .menu-superior {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
   justify-content: space-between;
   align-items: center;
   margin-left: 5%;
@@ -23,7 +24,7 @@
 .barra {
   display: flex;
   flex-direction: row;
-  width: 53%;
+  width: 80%;
   height: 42px;
   justify-self: center;
 }
@@ -37,7 +38,7 @@
   transition: width 0.3s ease, background-color 0.3s ease;
   text-decoration-color: white;
   height: 90%;
-  text-shadow:  2px 2px rgba(0, 0, 0, 0.2)
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .barra-colorida:hover {
@@ -141,7 +142,6 @@
   padding-top: 20px;
   margin-top: -10px;
   position: relative;
- 
 }
 .rodape > div > img {
   border-radius: 50%;
@@ -152,30 +152,29 @@
   column-gap: 40px;
 }
 
-
-.nuvem-bottom{
+.nuvem-bottom {
   height: 100%;
-  background-size: cover; 
-  width: 100%; 
+  background-size: cover;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
-.nuvem-green{
-  height: 100%; 
-  background-size: cover; 
-  width: 100%; 
+.nuvem-green {
+  height: 100%;
+  background-size: cover;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
-h5{
+h5 {
   color: white;
 }
 
-h6{
+h6 {
   color: white;
   text-decoration: none;
 }
@@ -220,4 +219,3 @@ a {
     transform: translateY(0);
   }
 }
-
