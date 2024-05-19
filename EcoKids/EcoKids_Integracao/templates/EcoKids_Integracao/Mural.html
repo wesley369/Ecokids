@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,11 +25,12 @@
       <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
       <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
       <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div>
+      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}" id="logout_button">Sair</a></div>
+      <div class="barra-colorida " style="background-color: rgb(81, 235, 76);"><a href="{% url 'EcoKids_Integracao:Ranking' %}">Ranking</a></div>
     </div>
     <div>
       <p style="color: black;" id="avatar_url_placeholder"></p>
-      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image">
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="width: 2000; height: 200px;">
     </div>
   </div>
   <div class="fundo">
@@ -81,6 +83,7 @@
   <script>
     var staticUrl = "{% static '' %}";
   </script>
+  <script src="{% static 'js/logout.js' %}"></script>
 </body>
 
 </html>

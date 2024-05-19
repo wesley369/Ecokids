@@ -16,4 +16,7 @@ urlpatterns = [
     path('AdicionarComentario/', views.mural_comentario, name='AdicionarComentario'),
     path('logout/', views.logout, name='logout'),
     path('get_avatar_url/', views.get_avatar_url, name='get_avatar_url'),
+    path('Ranking/', views.Ranking, name='Ranking'),
+    path('marcar-tarefa-realizada/<int:tarefa_id>/', views.marcar_tarefa_realizada, name='marcar_tarefa_realizada'),
+    path('api/get-ranking-data/', views.get_ranking_data, name='get_ranking_data')
 ]

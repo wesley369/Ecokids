@@ -13,7 +13,7 @@ function carregarAvatar() {
 
         } else {
             
-            document.getElementById('avatar_image').src = staticUrl + 'img/avatar-default.avif'; 
+            document.getElementById('avatar_image').src = staticUrl + 'img/avatar-default.avif';
         }
     })
     .catch(error => console.log('Erro:', error));
