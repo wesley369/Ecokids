@@ -9,6 +9,20 @@
   box-sizing: border-box;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #03b169;
+  border-radius: 10px;
+}
+
 .menu-superior {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -85,12 +99,17 @@ body.dark-mode {
   border-radius: 6px;
   display: flex;
   align-items: center;
+  margin-top: 10%;
+}
+
+.teste {
+  margin-top: 5%;
 }
 
 .nome {
-  text-align: center;
-  margin-left: 50%;
-  justify-content: center;
+  /* text-align: center; */
+  margin-left: 25%;
+  /* justify-content: center; */
   margin-top: 3%;
 }
 

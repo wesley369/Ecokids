@@ -9,6 +9,20 @@
   box-sizing: border-box;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #03b169;
+  border-radius: 10px;
+}
+
 .menu-superior {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -246,6 +260,7 @@ a {
     animation: fadeInDown 1s ease-out;
     color: white;
   }
+
   .barra {
     width: 100%;
     height: 20px;

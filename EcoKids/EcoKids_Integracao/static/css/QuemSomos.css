@@ -21,6 +21,20 @@
   color: white;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #03b169;
+  border-radius: 10px;
+}
+
 .barra {
   display: flex;
   flex-direction: row;

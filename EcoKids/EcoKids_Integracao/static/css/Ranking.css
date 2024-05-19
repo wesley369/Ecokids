@@ -1,8 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
 * {
+  /* font-family: "Jua", sans-serif; */
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* font-family: "Lato"; */
+  border: 2px solid #75eb5ed5;
+  background-color: #76eb5eb2;
+  color: var(--color-white);
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 23px;
+  margin-bottom: 600px;
+  height: 500px;
+  width: 50%;
+  /* position: relative;
+  width: 500px;
+  overflow-y: auto; */
+}
+
+.fundo-verde {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(9, 208, 168, 1);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* font-family: "Mukta Mahee", sans-serif; */
+  font-size: large;
+}
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 2%;
+}
+
+h4 {
+  color: black;
 }
 
 body {
@@ -11,7 +57,7 @@ body {
   flex-direction: column;
   font-family: "Mukta Mahee", sans-serif;
 
-  background: hsl(120, 100%, 5%); 
+  background: hsl(120, 100%, 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -20,7 +66,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
 
-  color: #f1f1f1;
+  color: #000000;
 }
 .menu-superior {
   display: grid;
@@ -150,8 +196,9 @@ main #crown {
   border: unset;
   padding: unset;
 
-  -webkit-animation: crown-animation 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: crown-animation 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: crown-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: crown-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 main .revenue {
@@ -167,6 +214,7 @@ section {
   justify-content: center;
   width: 100%;
   margin-bottom: 2.5rem;
+  gap: 10px;
 }
 
 section span {
@@ -182,7 +230,7 @@ section ul {
 
 section li {
   display: flex;
-  background-color: #112f27;
+  background-color: #75eb5ed5;
   align-items: center;
   justify-content: space-around;
   border-radius: 1rem;
@@ -216,7 +264,7 @@ section li p {
 section li span:last-child {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #03b169;
+  color: #000704;
   width: min(30%, 20rem);
 }
 
@@ -233,7 +281,7 @@ section li span:last-child {
   column-gap: 40px;
   padding-top: 20px;
   margin-top: -10px;
-  position: relative;
+  /* position: relative; */
   width: 100%;
 }
 .rodape > div > img {
@@ -276,11 +324,9 @@ a {
   text-decoration: none;
 }
 
-
 @media (min-width: 600px) {
   section ul {
     width: 100%;
-
   }
 
   section li img {
@@ -354,50 +400,54 @@ a {
 
 @-webkit-keyframes animate-svg-fill-1 {
   0% {
-    fill: transparent
+    fill: transparent;
   }
 
   100% {
-    fill: rgb(1, 177, 105)
+    fill: rgb(1, 177, 105);
   }
 }
 
 @keyframes animate-svg-fill-1 {
   0% {
-    fill: transparent
+    fill: transparent;
   }
 
   100% {
-    fill: rgb(1, 177, 105)
+    fill: rgb(1, 177, 105);
   }
 }
 
 .svg-elem-1 {
-  -webkit-animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
-  animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both
+  -webkit-animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715)
+    0.8s both;
+  animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s
+    both;
 }
 
 @-webkit-keyframes animate-svg-fill-2 {
   0% {
-    fill: transparent
+    fill: transparent;
   }
 
   100% {
-    fill: rgb(1, 177, 105)
+    fill: rgb(1, 177, 105);
   }
 }
 
 @keyframes animate-svg-fill-2 {
   0% {
-    fill: transparent
+    fill: transparent;
   }
 
   100% {
-    fill: rgb(1, 177, 105)
+    fill: rgb(1, 177, 105);
   }
 }
 
 .svg-elem-2 {
-  -webkit-animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
-  animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both
+  -webkit-animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715)
+    0.9s both;
+  animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s
+    both;
 }

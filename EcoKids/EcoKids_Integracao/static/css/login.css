@@ -7,6 +7,20 @@
   box-sizing: border-box;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #03b169;
+  border-radius: 10px;
+}
+
 body,
 input {
   /* font-family: 'Poppins', sans-serif; */
