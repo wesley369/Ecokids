@@ -1,11 +1,9 @@
 import json
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponseBadRequest
-from .models import Usuario, Tarefa, Forum, Avatar, UsuarioTarefa
+from .models import Usuario, Tarefa, Forum, Avatar
 from django.utils import timezone
 from django.contrib.auth.hashers import make_password
-from django.db.models import Sum, Case, When, IntegerField
-from django.templatetags.static import static
 
 
 def get_avatar_url(request):
@@ -68,30 +66,8 @@ def Card(request):
     return render(request, 'EcoKids_Integracao/Card.html')
 
 def ToDoList(request):
-    tarefas = Tarefa.objects.all()
-    context = {
-        'tarefas': tarefas
-    }
-    return render(request, 'EcoKids_Integracao/ToDoList.html', context)
-
-def marcar_tarefa_realizada(request, tarefa_id):
-    if request.method == 'POST':
-        user_id = request.session.get('user_id')
-        if user_id:
-            tarefa = get_object_or_404(Tarefa, id=tarefa_id)
-            usuario = get_object_or_404(Usuario, id=user_id)
-            
-            usuario_tarefa, created = UsuarioTarefa.objects.get_or_create(usuario=usuario, tarefa=tarefa)
-            
-            if not usuario_tarefa.realizada:
-                usuario_tarefa.realizada = True
-                usuario_tarefa.save()
-
-                usuario.total_pontuacao += tarefa.pontuacao
-                usuario.save()
-            
-            return JsonResponse({'success': True})
-    return JsonResponse({'success': False})
+    tarefas = Tarefa.objects.all() 
+    return render(request, 'EcoKids_Integracao/ToDoList.html', {'tarefas': tarefas})
 
 def Mural(request):
     return render(request, 'EcoKids_Integracao/Mural.html')
@@ -161,24 +137,11 @@ def logout(request):
     if 'user_id' in request.session:
         del request.session['user_id']  
     
-    default_avatar_url = 'img/avatar-default.jpg'
+    default_avatar_url = 'img/avatar-rafael.png'
     print("Logout: " + default_avatar_url)
     return JsonResponse({'user_avatar_url': default_avatar_url})
 
 
-def Ranking(request):
-    return render(request, 'EcoKids_Integracao/Ranking.html')
 
 
 
-def get_ranking_data(request):
-    usuarios = Usuario.objects.all().order_by('-total_pontuacao')
-    data = [
-        {
-            "nome": usuario.nome,
-            "total_pontuacao": usuario.total_pontuacao,
-            "avatar_url": static(usuario.avatar_url)  # Ajusta a URL do avatar
-        }
-        for usuario in usuarios
-    ]
-    return JsonResponse(data, safe=False)
