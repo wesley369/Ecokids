@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.contrib.auth.hashers import make_password
 from django.db.models import Sum, Case, When, IntegerField
 from django.templatetags.static import static
+from datetime import timedelta
 
 
 def get_avatar_url(request):
@@ -27,7 +28,9 @@ def get_avatar_url(request):
     return JsonResponse({'user_avatar_url': user_avatar_url})
 
 def index(request):
-    return render(request, 'EcoKids_Integracao/HomePage.html')
+    user_id = request.session.get('user_id')
+    return render(request, 'EcoKids_Integracao/HomePage.html', {'user_id': user_id})
+
 
 def QuemSomos(request):
     return render(request, 'EcoKids_Integracao/QuemSomos.html')
@@ -71,13 +74,34 @@ def Card(request):
     return render(request, 'EcoKids_Integracao/Card.html')
 
 def ToDoList(request):
-    tarefas = Tarefa.objects.all() 
+    user_id = request.session.get('user_id')
+    tarefas = []
+
+    todas_tarefas = Tarefa.objects.all()
+
+    if user_id:
+        usuario = get_object_or_404(Usuario, id=user_id)
+        usuario_tarefas = UsuarioTarefa.objects.filter(usuario=usuario).select_related('tarefa')
+        usuario_tarefas_dict = {ut.tarefa.id: ut.realizada for ut in usuario_tarefas}
+
+        for tarefa in todas_tarefas:
+            tarefas.append({
+                'id': tarefa.id,
+                'descricao': tarefa.descricao,
+                'pontuacao': tarefa.pontuacao,
+                'realizada': usuario_tarefas_dict.get(tarefa.id, False),
+            })
+    else:
+        for tarefa in todas_tarefas:
+            tarefas.append({
+                'id': tarefa.id,
+                'descricao': tarefa.descricao,
+                'pontuacao': tarefa.pontuacao,
+                'realizada': False, 
+            })
+
     return render(request, 'EcoKids_Integracao/ToDoList.html', {'tarefas': tarefas})
-    tarefas = Tarefa.objects.all()
-    context = {
-        'tarefas': tarefas
-    }
-    return render(request, 'EcoKids_Integracao/ToDoList.html', context)
+
 
 def marcar_tarefa_realizada(request, tarefa_id):
     if request.method == 'POST':
@@ -183,8 +207,27 @@ def get_ranking_data(request):
         {
             "nome": usuario.nome,
             "total_pontuacao": usuario.total_pontuacao,
-            "avatar_url": static(usuario.avatar_url)  # Ajusta a URL do avatar
+            "avatar_url": static(usuario.avatar_url)
         }
         for usuario in usuarios
     ]
     return JsonResponse(data, safe=False)
+
+def verificar_atualizacao_tarefas():
+    agora = timezone.now()
+    tarefas = Tarefa.objects.all()
+    for tarefa in tarefas:
+        if (agora - tarefa.ultima_atualizacao).total_seconds() > 86400:  # 24 horas
+            tarefa.ultima_atualizacao = agora
+            tarefa.save()
+            UsuarioTarefa.objects.filter(tarefa=tarefa).update(realizada=False)    
+
+def get_tempo_restante(request):
+    ultima_atualizacao = Tarefa.objects.latest('ultima_atualizacao').ultima_atualizacao
+    agora = timezone.now()
+    tempo_restante = timedelta(days=1) - (agora - ultima_atualizacao)
+
+    if tempo_restante.total_seconds() < 0:
+        tempo_restante = timedelta(seconds=0)
+
+    return JsonResponse({'tempo_restante': int(tempo_restante.total_seconds())})            

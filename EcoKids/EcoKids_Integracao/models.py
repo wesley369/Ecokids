@@ -12,8 +12,6 @@ class Usuario(models.Model):
     personagem_selecionado = models.CharField(max_length=100, blank=True, null=True)
     avatar_data_id = models.CharField(max_length=100, blank=True, null=True)  
     avatar_url = models.CharField(max_length=255, blank=True, null=True)  
-    avatar_data_id = models.CharField(max_length=100, blank=True, null=True)
-    avatar_url = models.CharField(max_length=255, blank=True, null=True)
     total_pontuacao = models.IntegerField(default=0) 
 
     def __str__(self):
@@ -34,11 +32,9 @@ class Tarefa(models.Model):
     descricao = models.CharField(max_length=255, null=True) 
     pontuacao = models.IntegerField(default=0, null=True) 
     realizada = models.BooleanField(default=False, null=True)
-    descricao = models.CharField(max_length=255, null=True)
-    pontuacao = models.IntegerField(default=0, null=True)
+    ultima_atualizacao = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"Tarefa de {self.usuario.nome} - {self.descricao}"
         return f"Tarefa - {self.descricao}"
 
       

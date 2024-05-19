@@ -18,5 +18,6 @@ urlpatterns = [
     path('get_avatar_url/', views.get_avatar_url, name='get_avatar_url'),
     path('Ranking/', views.Ranking, name='Ranking'),
     path('marcar-tarefa-realizada/<int:tarefa_id>/', views.marcar_tarefa_realizada, name='marcar_tarefa_realizada'),
-    path('api/get-ranking-data/', views.get_ranking_data, name='get_ranking_data')
+    path('api/get-ranking-data/', views.get_ranking_data, name='get_ranking_data'),
+    path('get_tempo_restante/', views.get_tempo_restante, name='get_tempo_restante')
 ]

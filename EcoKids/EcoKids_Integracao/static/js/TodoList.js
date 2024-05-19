@@ -1,4 +1,3 @@
-
 function carregarAvatar() {
     fetch('/get_avatar_url/')
     .then(response => response.json())
@@ -12,9 +11,7 @@ function carregarAvatar() {
     .catch(error => console.log('Erro:', error));
 }
 
-
 document.addEventListener("DOMContentLoaded", carregarAvatar);
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
+            if (!user_id) {
+                alert("Por favor, faça login para marcar tarefas.");
+                this.checked = !this.checked;  // Desfazer a alteração
+                return;
+            }
             const tarefaId = this.id.split('_')[1];
             fetch(`/marcar-tarefa-realizada/${tarefaId}/`, {
                 method: 'POST',
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    iniciarContador();
 });
 
 function getCookie(name) {
@@ -54,4 +58,27 @@ function getCookie(name) {
     return cookieValue;
 }
 
+function iniciarContador() {
+    fetch('/get_tempo_restante/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.tempo_restante) {
+                let tempo_restante = data.tempo_restante;
 
+                const intervalo = setInterval(() => {
+                    if (tempo_restante <= 0) {
+                        clearInterval(intervalo);
+                        location.reload();
+                    } else {
+                        tempo_restante--;
+                        const horas = Math.floor(tempo_restante / 3600);
+                        const minutos = Math.floor((tempo_restante % 3600) / 60);
+                        const segundos = tempo_restante % 60;
+
+                        document.getElementById('tempo_restante').textContent =
+                            `${horas}h ${minutos}m ${segundos}s`;
+                    }
+                }, 1000);
+            }
+        });
+}
