@@ -2,7 +2,7 @@
 import json
 from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 from .models import Usuario, Tarefa, Forum, Avatar
 from .models import Usuario, Tarefa, Forum, Avatar, UsuarioTarefa
 from django.utils import timezone
@@ -68,7 +68,12 @@ def Personagem(request):
             except Usuario.DoesNotExist:
                 pass
 
-    return render(request, 'EcoKids_Integracao/Personagem.html')
+    # Definindo um cookie com a flag HttpOnly
+    response = render(request, 'EcoKids_Integracao/Personagem.html')  # Substitua 'sua_pagina.html' pelo caminho da sua página
+    response.set_cookie('cookie_name', 'cookie_value', httponly=True, samesite='Strict')
+    return response
+
+    return response
 
 def Card(request):
     return render(request, 'EcoKids_Integracao/Card.html')
@@ -123,9 +128,16 @@ def marcar_tarefa_realizada(request, tarefa_id):
     return JsonResponse({'success': False})
 
 def Mural(request):
+    response = HttpResponse('Conteúdo da resposta')
+    response.set_cookie('cookie_name', 'cookie_value', httponly=True)
+
     return render(request, 'EcoKids_Integracao/Mural.html')
 
 def Login2(request):
+    # Definindo um cookie com a flag HttpOnly
+    response = HttpResponse('Conteúdo da resposta')
+    response.set_cookie('cookie_name', 'cookie_value', httponly=True)
+
     if request.method == 'POST':
         data = json.loads(request.body)
         email = data.get('email').strip() 
@@ -231,3 +243,49 @@ def get_tempo_restante(request):
         tempo_restante = timedelta(seconds=0)
 
     return JsonResponse({'tempo_restante': int(tempo_restante.total_seconds())})            
+
+
+
+
+# views.py
+
+from django.shortcuts import render
+
+def generate_nonce():
+    import os
+    import base64
+    return base64.b64encode(os.urandom(16)).decode()
+
+def Mural_Nonce(request):
+    nonce = generate_nonce()
+    context = {'nonce': nonce}
+    return render(request, 'Mural.html', context)
+
+def Card_Nonce(request):
+    nonce = generate_nonce()
+    context = {'nonce': nonce}
+    return render(request, 'Card.html', context)
+
+def HomePage_Nonce(request):
+    nonce = generate_nonce()
+    context = {'nonce': nonce}
+    return render(request, 'HomePage.html', context)
+
+def Personagem_Nonce(request):
+    nonce = generate_nonce()
+    context = {'nonce': nonce}
+    return render(request, 'Personagem.html', context)
+
+# def Login_Nonce(request):
+#     nonce = generate_nonce()
+#     context = {'nonce': nonce}
+#     return render(request, 'Login.html', context)
+
+# def minha_view(request):
+#     # Seu código para processar a requisição...
+
+#     # Definindo um cookie com a flag HttpOnly
+#     response = HttpResponse('Conteúdo da resposta')
+#     response.set_cookie('cookie_name', 'cookie_value', httponly=True)
+
+#     return response

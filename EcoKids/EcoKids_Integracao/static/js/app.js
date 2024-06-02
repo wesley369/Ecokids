@@ -1,3 +1,9 @@
+document.getElementById('email').addEventListener('change', onChangeEmail);
+document.getElementById('password').addEventListener('change', onChangePassword);
+document.getElementById('login-button').addEventListener('click', login);
+
+
+
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailErrors();
@@ -67,30 +73,9 @@ Login_btn.addEventListener('click', () => {
     container.classList.remove("Inscrever-se-mode");
 });
 
-//function login() {
-    //window.location.href = "/home.html";
-//}
-
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-          
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-
 function login() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-
 
     if (!email || !password) {
         alert("Por favor, preencha todos os campos.");
@@ -106,56 +91,15 @@ function login() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                
                 var homepageUrl = document.getElementById("login-button").getAttribute("data-homepage-url");
                 window.location.href = homepageUrl;
             } else if (xhr.status === 401) {
-                
                 alert("Credenciais inválidas. Por favor, tente novamente.");
             }
         }
     };
     xhr.send(JSON.stringify({ email: email, password: password }));
 }
-
-
-document.getElementById("btn").addEventListener("click", function(event) {
-    event.preventDefault();
-    
-
-    var csrftoken = getCookie('csrftoken');
-
-
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email2").value;
-    var senha = document.getElementById("senha2").value;
-
-
-    var formData = new FormData();
-    formData.append("nome", nome);
-    formData.append("email", email);
-    formData.append("senha", senha);
-    
-
-    fetch('/signup/', {
-        method: 'POST',
-        headers: {
-            'X-CSRFToken': csrftoken
-        },
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-        if (data.success) {
-        
-            window.location.href = '/Personagem';
-        }
-    })
-    .catch(error => {
-        console.error('Erro ao enviar solicitação:', error);
-    });
-});
 
 function getCookie(name) {
     var cookieValue = null;
@@ -173,3 +117,34 @@ function getCookie(name) {
     return cookieValue;
 }
 
+document.getElementById("btn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    var csrftoken = getCookie('csrftoken');
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email2").value;
+    var senha = document.getElementById("senha2").value;
+
+    var formData = new FormData();
+    formData.append("nome", nome);
+    formData.append("email", email);
+    formData.append("senha", senha);
+    
+    fetch('/signup/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            window.location.href = '/Personagem';
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao enviar solicitação:', error);
+    });
+});

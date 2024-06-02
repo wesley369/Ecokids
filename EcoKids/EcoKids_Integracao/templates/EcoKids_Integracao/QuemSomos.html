@@ -84,11 +84,11 @@
     </div>
   </div>
   <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-  <script src="{% static 'js/TodoList.js' %}"></script>
-  <script>
+  <script src="{% static 'js/TodoList.js' %}" nonce="{{ nonce }}"></script>
+  <script nonce="{{ nonce }}">
     var staticUrl = "{% static '' %}";
   </script>
-  <script src="{% static 'js/logout.js' %}"></script>
+  <script src="{% static 'js/logout.js' %}" nonce="{{ nonce }}"></script>
 </body>
 
 </html>

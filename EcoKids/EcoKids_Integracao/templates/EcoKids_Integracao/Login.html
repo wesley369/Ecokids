@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> -->
     {% load static %}
     <title>login e Cadastro</title>
     <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
@@ -23,13 +23,13 @@
                     <h2 class="title">EcoKids</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Email" id="email" onchange="onChangeEmail()">
+                        <input type="text" placeholder="Email" id="email" />
                     </div>
                     <div class="error" id="email-required-error">Email é obrigatório!</div>
                     <div class="error" id="email-invalid-error">Email inválido!</div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" id="password" onchange="onChangePassword()" autocomplete="on" placeholder="Senha">
+                        <input type="password" placeholder="Senha" autocomplete="on" id="password" />
                     </div>
                     <div class="error" id="password-required-error">Senha é obrigatória!</div>
                     <div class="error">Senha incorreta!</div>
@@ -37,7 +37,7 @@
                         <button type="button" id="recover-password-button" class="clear" disabled="true">Esqueceu a senha?</button>
                     </div>
                     <div>
-                        <button type="button" class="btn solid" id="login-button" onclick="login()" data-homepage-url="{% url 'EcoKids_Integracao:HomePage' %}">Entrar</button>
+                        <button type="button" class="btn solid" id="login-button" data-homepage-url="{% url 'EcoKids_Integracao:HomePage' %}">Entrar</button>
                     </div>
                     <p class="social-text">Ou entre com plataformas sociais</p>
                     <div class="social-media">
@@ -102,7 +102,7 @@
             <div class="panel left-panel">
                 <div class="content">
                     <h2>Bem-Vindo ao</h2>
-                    <img class="logs" src="img/agendar.png" alt="">
+                    <!-- <img class="logs" src="img/agendar.png" alt=""> -->
                     <h4>EcoKids</h4>
                     <p>Faça login ou inscreva-se para realizar seu agendamento.</p>
                     <button class="btn transparent" id="Inscrever-se-btn">Criar Conta</button>
@@ -123,8 +123,8 @@
     </div>
 
     
-    <script src="{% static 'js/app.js' %}"></script>
-    <script src="{% static 'js/validations.js'}"></script>
+    <script src="{% static 'js/app.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'js/validations.js'}" nonce="{{ nonce }}"></script>
 </body>
 
 </html>

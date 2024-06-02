@@ -6,84 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoKids</title>
   {% load static %}
-  <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-
-  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon" nonce="{{ nonce }}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" nonce="{{ nonce }}">
+  <link rel="stylesheet" href="{% static 'css/cards.css' %}" nonce="{{ nonce }}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" nonce="{{ nonce }}">
 </head>
 
 <body>
   <div class="menu-superior">
     <div>
-      <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo"></a>
+      <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo" nonce="{{ nonce }}"></a>
     </div>
     <div class="barra">
-
-      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
-        <a class="fontebarra" href="#materiais">Materiais</a>
+      <div class="barra-colorida" style="background-color: rgba(134, 200, 154, 1);" nonce="{{ nonce }}">
+        <a class="fontebarra" href="#materiais" nonce="{{ nonce }}">Materiais</a>
       </div>
-      <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-      <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-      <div class="barra-colorida " style="background-color: rgb(81, 235, 76);"><a href="{% url 'EcoKids_Integracao:Ranking' %}">Ranking</a></div>
-      <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-      <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}" id="logout_button">Sair</a></div>
+      <div class="barra-colorida" style="background-color: rgba(245, 101, 124, 1);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:Mural' %}" nonce="{{ nonce }}">Mural</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(99, 189, 211, 1);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:ToDoList' %}" nonce="{{ nonce }}">Metas</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgb(81, 235, 76);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:Ranking' %}" nonce="{{ nonce }}">Ranking</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(201, 133, 242, 1);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:QuemSomos' %}" nonce="{{ nonce }}">Sobre nós</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(9, 208, 168, 1);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:Login' %}" nonce="{{ nonce }}">Login</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(235, 185, 76, 1);" nonce="{{ nonce }}">
+        <a href="{% url 'EcoKids_Integracao:Login' %}" id="logout_button" nonce="{{ nonce }}">Sair</a>
+      </div>
     </div>
-    <div>
-      <p style="color: black;" id="avatar_url_placeholder"></p>
-      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="width: 2000; height: 100px;">
+    <div nonce="{{ nonce }}">
+      <p style="color: black;" id="avatar_url_placeholder" nonce="{{ nonce }}"></p>
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="width: 200px; height: 100px;" nonce="{{ nonce }}">
     </div>
   </div>
 
-  <div id="carouselExampleControls" class="carousel slide container grid-produtos" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active teste ">
-        <img class="d-block w-100 produto imgcrianca" src="{% static 'img/2019-10-criancas-e-meio-ambiente-ecologico.webp.jpeg' %}" alt="Primeiro Slide">
+  <div id="carouselExampleControls" class="carousel slide container grid-produtos" data-ride="carousel" nonce="{{ nonce }}">
+    <div class="carousel-inner" nonce="{{ nonce }}">
+      <div class="carousel-item active teste">
+        <img class="d-block w-100 produto imgcrianca" src="{% static 'img/2019-10-criancas-e-meio-ambiente-ecologico.webp.jpeg' %}" alt="Primeiro Slide" nonce="{{ nonce }}">
       </div>
     </div>
-    <div>
-      <div class="item-grid">
-        <p class="nome">A importância da reciclagem</p>
+    <div nonce="{{ nonce }}">
+      <div class="item-grid" nonce="{{ nonce }}">
+        <p class="nome" nonce="{{ nonce }}">A importância da reciclagem</p>
       </div>
-      <div class="endereco">
-        <p>A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima para a criação de um novo produto. Na reciclagem, conseguimos reinserir um resíduo no ciclo produtivo, o que tem um impacto muito positivo no meio ambiente.</p>
-        <p>A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima para a criação de um novo produto. Na reciclagem, conseguimos reinserir um resíduo no ciclo produtivo, o que tem um impacto muito positivo no meio ambiente.</p>
-        <p>A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima.</p>
+      <div class="endereco" nonce="{{ nonce }}">
+        <p nonce="{{ nonce }}">A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima para a criação de um novo produto. Na reciclagem, conseguimos reinserir um resíduo no ciclo produtivo, o que tem um impacto muito positivo no meio ambiente.</p>
+        <p nonce="{{ nonce }}">A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima para a criação de um novo produto. Na reciclagem, conseguimos reinserir um resíduo no ciclo produtivo, o que tem um impacto muito positivo no meio ambiente.</p>
+        <p nonce="{{ nonce }}">A reciclagem é um processo por meio do qual objetos já utilizados são transformados em matéria-prima.</p>
       </div>
     </div>
-    <div class="descricao-produto">
-      <h4>É a sua vez de agir!</h4>
-      <p>Com atitudes simples do dia a dia, você consegue ajudar o planeta! Comece separando as
+    <div class="descricao-produto" nonce="{{ nonce }}">
+      <h4 nonce="{{ nonce }}">É a sua vez de agir!</h4>
+      <p nonce="{{ nonce }}">Com atitudes simples do dia a dia, você consegue ajudar o planeta! Comece separando as
         embalagens plásticas para que possam ser levadas ao destino correto!</p>
     </div>
   </div>
-  <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-  <div class="rodape">
-    <div>
-      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo">
+  <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green" nonce="{{ nonce }}">
+  <div class="rodape" nonce="{{ nonce }}">
+    <div nonce="{{ nonce }}">
+      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo" nonce="{{ nonce }}">
     </div>
-    <div class="rodape-content">
-      <div>
-        <h5>SOBRE NÓS</h5>
-        <H6>QUEM SOMOS</H6>
+    <div class="rodape-content" nonce="{{ nonce }}">
+      <div nonce="{{ nonce }}">
+        <h5 nonce="{{ nonce }}">SOBRE NÓS</h5>
+        <H6 nonce="{{ nonce }}">QUEM SOMOS</H6>
       </div>
-      <!-- <div>
-        <h5>SOBRE NÓS</h5>
-        <H6>QUEM SOMOS</H6>
-      </div>
-      <div> -->
-      <h5>ATENDIMENTO</h5>
-      <H6>QUEM SOMOS</H6>
+      <h5 nonce="{{ nonce }}">ATENDIMENTO</h5>
+      <H6 nonce="{{ nonce }}">QUEM SOMOS</H6>
     </div>
   </div>
-  </div>
-  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-  <script src="{% static 'js/ToDoList.js' %}"></script>
-  <script>
+  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom" nonce="{{ nonce }}">
+  <script src="{% static 'js/ToDoList.js' %}" nonce="{{ nonce }}"></script>
+  <script nonce="{{ nonce }}">
     var staticUrl = "{% static '' %}";
   </script>
-
-  <script src="{% static 'js/logout.js' %}"></script>
+  <script src="{% static 'js/logout.js' %}" nonce="{{ nonce }}"></script>
 </body>
+
+</html>

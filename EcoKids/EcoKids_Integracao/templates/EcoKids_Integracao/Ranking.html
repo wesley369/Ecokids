@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="{% static 'css/Ranking.css' %}" />
   <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@400;700&display=swap" rel="stylesheet" /> -->
   <script defer src="{% static 'js/Ranking.js' %}"></script>
 </head>
 
@@ -132,17 +132,17 @@
   </div>
   <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+  <script src="{% static 'js/Ranking-animacao.js' %}"></script>
+  <script nonce="{{ nonce }}">
     AOS.init({
       duration: 1000,
       once: true,
     });
   </script>
-  <script>
+  <script nonce="{{ nonce }}">
     var staticUrl = "{% static '' %}";
   </script>
-  <script src="{% static 'js/logout.js' %}"></script>
+  <script src="{% static 'js/logout.js' %}" nonce="{{ nonce }}"></script>
 </body>
 
 </html>

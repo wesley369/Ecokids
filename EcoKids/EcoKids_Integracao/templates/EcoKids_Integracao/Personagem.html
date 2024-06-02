@@ -6,106 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoKids</title>
     {% load static %}
-    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="{% static 'js/slick.min.js' %}"></script>
-    <script src="{% static 'js/slick.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/Personagem.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon" nonce="{{ nonce }}">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" nonce="{{ nonce }}"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" nonce="{{ nonce }}"></script>
+    <script src="{% static 'js/slick.min.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'js/slick.js' %}" nonce="{{ nonce }}"></script>
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'css/Personagem.css' %}" nonce="{{ nonce }}">
 </head>
 
 <body>
     <div class="menu-superior">
         <div>
             <a href="{% url 'EcoKids_Integracao:HomePage' %}">
-                <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo">
+                <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png' %}" alt="EcoKids-Logo" nonce="{{ nonce }}">
             </a>
         </div>
         <div class="barra">
-            <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
-                <a class="fontebarra" href="{% url 'EcoKids_Integracao:HomePage' %}#materiais">Materiais</a>
+            <div class="barra-colorida" style="background-color: rgba(134, 200, 154, 1);" nonce="{{ nonce }}">
+                <a class="fontebarra" href="{% url 'EcoKids_Integracao:HomePage' %}#materiais" nonce="{{ nonce }}">Materiais</a>
             </div>
-            <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-            <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-            <div class="barra-colorida " style="background-color: rgb(81, 235, 76);"><a href="{% url 'EcoKids_Integracao:Ranking' %}">Ranking</a></div>
-            <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-            <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-            <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Sair</a></div>
+            <div class="barra-colorida" style="background-color: rgba(245, 101, 124, 1);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:Mural' %}" nonce="{{ nonce }}">Mural</a>
+            </div>
+            <div class="barra-colorida" style="background-color: rgba(99, 189, 211, 1);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:ToDoList' %}" nonce="{{ nonce }}">Metas</a>
+            </div>
+            <div class="barra-colorida" style="background-color: rgb(81, 235, 76);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:Ranking' %}" nonce="{{ nonce }}">Ranking</a>
+            </div>
+            <div class="barra-colorida" style="background-color: rgba(201, 133, 242, 1);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:QuemSomos' %}" nonce="{{ nonce }}">Sobre nós</a>
+            </div>
+            <div class="barra-colorida" style="background-color: rgba(9, 208, 168, 1);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:Login' %}" nonce="{{ nonce }}">Login</a>
+            </div>
+            <div class="barra-colorida" style="background-color: rgba(235, 185, 76, 1);" nonce="{{ nonce }}">
+                <a href="{% url 'EcoKids_Integracao:Login' %}" nonce="{{ nonce }}">Sair</a>
+            </div>
         </div>
-        <div>
-
-            <p style="color: black;" id="avatar_url_placeholder"></p>
-            <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="display: none;">
-
+        <div nonce="{{ nonce }}">
+            <p style="color: black;" id="avatar_url_placeholder" nonce="{{ nonce }}"></p>
+            <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="display: none;" nonce="{{ nonce }}">
         </div>
     </div>
-    <div class="carrousel">
-        <div>
-            <h1>
+    <div class="carrousel" nonce="{{ nonce }}">
+        <div nonce="{{ nonce }}">
+            <h1 nonce="{{ nonce }}">
                 CRIE SEU PERSONAGEM
             </h1>
         </div>
-        <form method="post" id="personagem-form">
+        <form method="post" id="personagem-form" nonce="{{ nonce }}">
             {% csrf_token %}
-            <div class="center">
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="1">
+            <div class="center" nonce="{{ nonce }}">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="1" nonce="{{ nonce }}">
                 </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="" id="2">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/avatar-alessandra.png' %}" alt="" srcset="" id="2" nonce="{{ nonce }}">
                 </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-wesley.png' %}" alt="" srcset="" id="3">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/avatar-wesley.png' %}" alt="" srcset="" id="3" nonce="{{ nonce }}">
                 </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-rafael.png' %}" alt="" srcset="" id="4">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/avatar-rafael.png' %}" alt="" srcset="" id="4" nonce="{{ nonce }}">
                 </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/laurinha-avatar.webp' %}" alt="" srcset="" id="5">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/laurinha-avatar.webp' %}" alt="" srcset="" id="5" nonce="{{ nonce }}">
                 </div>
-                <div class="carrousel-itens">
-                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="6">
+                <div class="carrousel-itens" nonce="{{ nonce }}">
+                    <img src="{% static 'img/avatar-tuanny.png' %}" alt="" srcset="" id="6" nonce="{{ nonce }}">
                 </div>
             </div>
-            <div class="input">
-                <input type="text" name="nome_personagem" placeholder="Personagem">
+            <div class="input" nonce="{{ nonce }}">
+                <input type="text" name="nome_personagem" placeholder="Personagem" nonce="{{ nonce }}">
             </div>
-            <div class="botao">
-                <button type="submit">VAMOS JOGAR</button>
+            <div class="botao" nonce="{{ nonce }}">
+                <button type="submit" nonce="{{ nonce }}">VAMOS JOGAR</button>
             </div>
         </form>
     </div>
-    <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-    <div class="rodape">
-        <div>
-            <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo">
+    <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green" nonce="{{ nonce }}">
+    <div class="rodape" nonce="{{ nonce }}">
+        <div nonce="{{ nonce }}">
+            <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo" nonce="{{ nonce }}">
         </div>
-        <div class="rodape-content">
-            <div>
-                <h5>SOBRE NÓS</h5>
-                <H6>QUEM SOMOS</H6>
+        <div class="rodape-content" nonce="{{ nonce }}">
+            <div nonce="{{ nonce }}">
+                <h5 nonce="{{ nonce }}">SOBRE NÓS</h5>
+                <H6 nonce="{{ nonce }}">QUEM SOMOS</H6>
             </div>
-            <!-- <div>
-            <h5>SOBRE NÓS</h5>
-            <H6>QUEM SOMOS</H6>
-        </div> -->
-            <div>
-                <h5>SOBRE NÓS</h5>
-                <H6>QUEM SOMOS</H6>
+            <div nonce="{{ nonce }}">
+                <h5 nonce="{{ nonce }}">SOBRE NÓS</h5>
+                <H6 nonce="{{ nonce }}">QUEM SOMOS</H6>
             </div>
         </div>
     </div>
-    <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-    <script>
+    <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom" nonce="{{ nonce }}">
+    <script nonce="{{ nonce }}">
         $('.center').slick({
             centerMode: true,
             centerPadding: '60px',
             slidesToShow: 5,
             responsive: [
                 {
-                    breakpoint: 768,
+                    breakpoint: 968,
                     settings: {
                         arrows: false,
                         centerMode: true,
@@ -125,11 +131,11 @@
             ]
         });
     </script>
-    <script src="{% static 'js/Personagem.js' %}"></script>
-    <script>
+    <script src="{% static 'js/Personagem.js' %}" nonce="{{ nonce }}"></script>
+    <script nonce="{{ nonce }}">
         var staticUrl = "{% static '' %}";
     </script>
-    <script src="{% static 'js/logout.js' %}"></script>
+    <script src="{% static 'js/logout.js' %}" nonce="{{ nonce }}"></script>
 </body>
 
 </html>

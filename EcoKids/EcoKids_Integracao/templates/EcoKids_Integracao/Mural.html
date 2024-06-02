@@ -5,84 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoKids</title>
-  {% load static %}
-  <link rel="shortcut icon" href="{% static 'img/EcoKids-Logo.png' %}" type="image/x-icon">
-  <link rel="stylesheet" href="{% static 'css/Mural.css' %}">
+  <link rel="shortcut icon" href="/static/img/EcoKids-Logo.png" type="image/x-icon">
+  <link rel="stylesheet" nonce="{{ nonce }}" href="/static/css/Mural.css">
+  <link rel="stylesheet" nonce="{{ nonce }}" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
 </head>
 
 <body>
-
   <div class="menu-superior">
     <div>
-      <a href="{% url 'EcoKids_Integracao:HomePage' %}"><img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo"></a>
+      <a href="/"><img class="EcoKids-Logo img-fluid" src="/static/img/EcoKids-Logo.png" alt="EcoKids-Logo"></a>
     </div>
     <div class="barra">
-      <div class="barra-colorida " style="background-color: rgba(134, 200, 154, 1);">
-        <a class="fontebarra" href="{% url 'EcoKids_Integracao:HomePage' %}#materiais">Materiais</a>
+      <div class="barra-colorida" style="background-color: rgba(134, 200, 154, 1);">
+        <a class="fontebarra" href="/#materiais" nonce="{{ nonce }}">Materiais</a>
       </div>
-      <div class="barra-colorida " style="background-color: rgba(245, 101, 124, 1);"><a href="{% url 'EcoKids_Integracao:Mural' %}">Mural</a></div>
-      <div class="barra-colorida " style="background-color: rgba(99, 189, 211, 1);"><a href="{% url 'EcoKids_Integracao:ToDoList' %}">Metas</a></div>
-      <div class="barra-colorida " style="background-color: rgb(81, 235, 76);"><a href="{% url 'EcoKids_Integracao:Ranking' %}">Ranking</a></div>
-      <div class="barra-colorida " style="background-color: rgba(201, 133, 242, 1);"><a href="{% url 'EcoKids_Integracao:QuemSomos' %}">Sobre nós</a></div>
-      <div class="barra-colorida " style="background-color: rgba(9, 208, 168, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}">Login</a></div>
-      <div class="barra-colorida " style="background-color: rgba(235, 185, 76, 1);"><a href="{% url 'EcoKids_Integracao:Login' %}" id="logout_button">Sair</a></div>
+      <div class="barra-colorida" style="background-color: rgba(245, 101, 124, 1);">
+        <a href="/Mural/" nonce="{{ nonce }}">Mural</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(99, 189, 211, 1);">
+        <a href="/ToDoList/" nonce="{{ nonce }}">Metas</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgb(81, 235, 76);">
+        <a href="/Ranking/" nonce="{{ nonce }}">Ranking</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(201, 133, 242, 1);">
+        <a href="/quem-somos/" nonce="{{ nonce }}">Sobre nós</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(9, 208, 168, 1);">
+        <a href="/login/" nonce="{{ nonce }}">Login</a>
+      </div>
+      <div class="barra-colorida" style="background-color: rgba(235, 185, 76, 1);">
+        <a href="/logout/" id="logout_button" nonce="{{ nonce }}">Sair</a>
+      </div>
     </div>
     <div>
-      <p style="color: black;" id="avatar_url_placeholder"></p>
-      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="width: 2000; height: 100px;">
+      <p style="color: black;" id="avatar_url_placeholder" nonce="{{ nonce }}"></p>
+      <img src="" alt="Avatar do usuário" class="img-fluid" id="avatar_image" style="width: 200px; height: 100px;" nonce="{{ nonce }}">
     </div>
   </div>
   <div class="fundo">
-    <h1 class="titulo">Deixe seu comentário</h1>
+    <h1 class="titulo" nonce="{{ nonce }}">Deixe seu comentário</h1>
   </div>
   <section class="conteudo">
     <div class="formulario-container">
-      {% csrf_token %}
-      <form class="formulario" id="formulario-de-comentarios" method="post">
-        <div class="input-container">
-          <input type="text" id="input-titulo" class="input-de-texto" placeholder="Título" maxlength="30">
+      <form class="formulario" id="formulario-de-comentarios" method="post" nonce="{{ nonce }}">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <div class="input-container" nonce="{{ nonce }}">
+          <input type="text" id="input-titulo" name="titulo" class="input-de-texto" placeholder="Título" maxlength="30" required nonce="{{ nonce }}">
         </div>
-        <div class="input-container">
-          <textarea id="input-formulario" class="input-de-texto comentario" placeholder="Comentário" maxlength="500"></textarea>
-          <div class="input-container-button">
-            <button type="submit">Enviar</button>
+        <div class="input-container" nonce="{{ nonce }}">
+          <textarea id="input-formulario" name="comentario" class="input-de-texto comentario" placeholder="Comentário" maxlength="500" required nonce="{{ nonce }}"></textarea>
+          <div class="input-container-button" nonce="{{ nonce }}">
+            <button type="submit" nonce="{{ nonce }}">Enviar</button>
           </div>
         </div>
-
-        <p id="mensagem-invalida"></p>
+        <p id="mensagem-invalida" nonce="{{ nonce }}"></p>
       </form>
     </div>
-    <div id="todos-os-comentarios">
-      <h3>Comentários</h3>
+    <div id="todos-os-comentarios" nonce="{{ nonce }}">
+      <h3 nonce="{{ nonce }}">Comentários</h3>
     </div>
   </section>
-
-  <img src="{% static 'img/nuvem-top-white.png' %}" alt="nuvem" class="nuvem-green">
-  <div class="rodape">
-    <div>
-      <img class="EcoKids-Logo img-fluid" src="{% static 'img/EcoKids-Logo.png'  %}" alt="EcoKids-Logo">
+  <img src="/static/img/nuvem-top-white.png" alt="nuvem" class="nuvem-green" nonce="{{ nonce }}">
+  <div class="rodape" nonce="{{ nonce }}">
+    <div nonce="{{ nonce }}">
+      <img class="EcoKids-Logo img-fluid" src="/static/img/EcoKids-Logo.png" alt="EcoKids-Logo" nonce="{{ nonce }}">
     </div>
-    <div class="rodape-content">
-      <div>
-        <h5>SOBRE NÓS</h5>
-        <H6>QUEM SOMOS</H6>
+    <div class="rodape-content" nonce="{{ nonce }}">
+      <div nonce="{{ nonce }}">
+        <h5 nonce="{{ nonce }}">SOBRE NÓS</h5>
+        <h6 nonce="{{ nonce }}">QUEM SOMOS</h6>
       </div>
-      <!-- <div>
-        <h5>SOBRE NÓS</h5>
-        <H6>QUEM SOMOS</H6>
-      </div> -->
-      <div>
-        <h5>ATENDIMENTO</h5>
-        <H6>QUEM SOMOS</H6>
+      <div nonce="{{ nonce }}">
+        <h5 nonce="{{ nonce }}">ATENDIMENTO</h5>
+        <h6 nonce="{{ nonce }}">QUEM SOMOS</h6>
       </div>
     </div>
   </div>
-  <img src="{% static 'img/nuvem-bottom.png' %}" alt="nuvem" class="nuvem-bottom">
-  <script src="{% static 'js/Mural.js' %}"></script>
-  <script>
-    var staticUrl = "{% static '' %}";
+  <img src="/static/img/nuvem-bottom.png" alt="nuvem" class="nuvem-bottom" nonce="{{ nonce }}">
+  <script nonce="{{ nonce }}">
+    var staticUrl = "/static/";
   </script>
-  <script src="{% static 'js/logout.js' %}"></script>
+  <script src="/static/js/Mural.js" nonce="{{ nonce }}"></script>
+  <script src="/static/js/logout.js" nonce="{{ nonce }}"></script>
 </body>
 
 </html>

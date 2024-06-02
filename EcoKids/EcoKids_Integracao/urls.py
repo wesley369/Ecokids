@@ -19,5 +19,11 @@ urlpatterns = [
     path('Ranking/', views.Ranking, name='Ranking'),
     path('marcar-tarefa-realizada/<int:tarefa_id>/', views.marcar_tarefa_realizada, name='marcar_tarefa_realizada'),
     path('api/get-ranking-data/', views.get_ranking_data, name='get_ranking_data'),
-    path('get_tempo_restante/', views.get_tempo_restante, name='get_tempo_restante')
+    path('get_tempo_restante/', views.get_tempo_restante, name='get_tempo_restante'),
+    path('generate_nonce/', views.generate_nonce, name='generate_nonce'),
+    path('Mural_Nonce/', views.Mural_Nonce, name='Mural_Nonce'),
+    path('Card_Nonce/', views.Card_Nonce, name='Card_Nonce'),
+    path('HomePage_Nonce/', views.HomePage_Nonce, name='HomePage_Nonce'),
+    path('Personagem_Nonce/', views.Personagem_Nonce, name='Personagem_Nonce')
+    # path('Login_Nonce/', views.Login_Nonce, name='Login_Nonce')
 ]
